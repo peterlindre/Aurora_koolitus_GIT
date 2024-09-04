@@ -4,6 +4,7 @@
 .nupp {
   font-weight: bold;
   border-color: blue;
+  
 }
 .nupp:hover {
   background-color: lightblue;
