@@ -19,6 +19,7 @@ function Kontakt() {
     <div className="kontakt">Tartu esindus</div>
     <div className="kontakt">Tasku keskus</div>
     <div className="kontakt">+372 56267813</div>
+    <div className="kontakt">Turu 2</div>
     <br />
     <br />
     <img className="pilt-postimees" src="https://f10.pmo.ee/G77WagGMA4X9pJ_k2h_utEeSWr8=/1200x630/https://f.pmo.ee/logos/81/8767aa8e833a43c5bf2dd1ece8548b52.png" alt="" />

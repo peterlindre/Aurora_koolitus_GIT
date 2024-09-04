@@ -8,6 +8,7 @@ import Meist from "./pages/Meist";
 
 
 
+
 function App() {
   return (
     <div>
@@ -27,7 +28,7 @@ function App() {
         <button className='button4'>Info meist</button>
       </Link>
      <Routes>
-      <Route path= 'avalehele' element={ <Avaleht/>} />
+      <Route path= '' element={ <Avaleht/>} />
       <Route path= 'uudised' element={ <Uudised/>} />
       <Route path= 'kontakt' element={ <Kontakt/>} />
       <Route path= 'meist' element={ <Meist/>} />

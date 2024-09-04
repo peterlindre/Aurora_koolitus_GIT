@@ -6,7 +6,6 @@ function App() {
     <div className="App">
      
 
-
       
       <button className="try"> Try it </button>
       <p className='tekst'>Proov</p>
