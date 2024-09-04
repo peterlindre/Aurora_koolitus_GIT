@@ -70,7 +70,7 @@
   font-weight: bold;
   background: rgb(237, 48, 48);
   width: 200px;
-  margin-left: 330px;
+  margin-left: 570px;
 }
 .tekst2:hover {
   background: rgba(131, 107, 18, 0.696);
@@ -88,24 +88,31 @@
 
 td,th {
   font-family: arial, sans-serif;
-  border: 1px solid, black;
   text-align: left;
   padding: 25px;
 
- 
 
-  
 }
 tr:nth-child(even) {
   background-color: #dddddd;
-  width: 100%;
-  
-}
 
+}
+.Rida {
+  width: 100%;
+}
 .rida1{
   width: 65%;
 }
 .rida2{
-  width: 30%;
-  
+  width: 20%;
+
+}
+.rida3 {
+  width: 10%;
+}
+
+table, th, td {
+  border: 1px solid #dddddd;;
+
+border-collapse: collapse;
 }

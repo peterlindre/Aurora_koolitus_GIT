@@ -14,12 +14,12 @@ function App() {
       <img className='pilt' src="https://onoff.ee/2508228-superlarge_default_2x/apple-iphone-15-pro-128gb-sinine-titanium.jpg" alt='pilt' />
 
 <div>
-      <table>
+      <table className='Rida'>
         
   <tr>
     <th className='rida1'>Company</th>
     <th className='rida2'>Contact</th>
-    <th>Country</th>
+    <th className='rida3'>Country</th>
   </tr>
   <tr>
     <td>Alfreds Futterkiste</td>
