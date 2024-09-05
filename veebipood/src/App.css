@@ -10,6 +10,7 @@
   background-color: lightblue;
   cursor: pointer;
 }
+
 .nupp:active{
   text-decoration: underline;
 }
