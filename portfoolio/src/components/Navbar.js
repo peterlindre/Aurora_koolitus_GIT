@@ -6,7 +6,8 @@ function Navbar() {
     <img className='main-picture' src="https://i.pinimg.com/originals/ea/fd/32/eafd327860e774cf4a2847b066da1310.jpg" alt="" />
 
     <p className='HELLO'> Hello, I am Peter Lindre and this website is made for Programming or Design to show my portfolio</p>
-    <div className='rectangle'>
+    <div className='rectangle'> </div>
+    
     <div className="navigation-pictures">
 
     <Link className='main-link' to="work">
@@ -22,7 +23,7 @@ function Navbar() {
     <p>Kursuste lehele</p>
     </Link>
      
-    </div>
+  
     </div>
     </div>
     
