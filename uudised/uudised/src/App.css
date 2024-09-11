@@ -55,9 +55,7 @@
   margin-left: 40px;
  }
  
- .kontakt {
-  margin-left: 40px;
- }
+
  .button1 {
   border: none;
   font-weight: bold;
@@ -138,4 +136,7 @@
  .button4:active {
   cursor: pointer;
   opacity: 0.4;
+ }
+ .valitud {
+  font-weight: bold;
  }
