@@ -49,3 +49,18 @@ body {
   font-family: 'Roboto';
 }
 
+.nupp {
+margin: 2px
+
+}
+.nupp:hover{
+  cursor: pointer;
+}
+.nupp-aktiivne{
+  margin: 20px;
+  border: 3px solid yellow;
+  border: none;
+  font-weight: bold;
+  
+}
+
