@@ -13,42 +13,43 @@ function Ilmumine() {
       {n2itaLisainfot === true && <span>V</span>}
     </div>
       { n2itaLisainfot === true && <div> Tellitavad tooted ja teenused
-        Lisatud teenused
-          Family pakett
-          Soodustus kuni 29.03.2023
-          0,00 €/kuu
+        Lisatud teenused <br /> <br />
+          Family pakett <br /><br />
 
-          39,00 €/kuu
-          Videolaenutus
+          Soodustus kuni 29.03.2023 <br />
+          0,00 €/kuu <br /><br />
 
-          Sisaldub paketis
-          FOX NOW
-          
-          Sisaldub paketis
-          HBO
+          39,00 €/kuu <br />
+          Videolaenutus <br /><br />
 
-          Sisaldub paketis
-          National Geographic keskkond
+          Sisaldub paketis <br />
+          FOX NOW <br /><br />
           
-          Sisaldub paketis
-          Go3 Film / Paramount+
+          Sisaldub paketis <br />
+          HBO <br /><br />
+
+          Sisaldub paketis <br />
+          National Geographic keskkond <br /><br />
           
-          Sisaldub paketis
-          Lastenurk
+          Sisaldub paketis <br />
+          Go3 Film / Paramount+ <br /><br />
           
-          Sisaldub paketis
-          Setanta Sportsi äpp
+          Sisaldub paketis <br />
+          Lastenurk <br /><br />
+          
+          Sisaldub paketis <br />
+          Setanta Sportsi äpp <br /><br />
          
-          Sisaldub paketis
-          5 ekraani
+          Sisaldub paketis <br />
+          5 ekraani <br /><br />
          
-          Sisaldub paketis
-          Inspira +
+          Sisaldub paketis <br />
+          Inspira + <br /><br />
           
-          Sisaldub paketis
-          Salvestamine
+          Sisaldub paketis <br />
+          Salvestamine <br /><br />
          
-          Sisaldub paketis
+          Sisaldub paketis <br /> <br />
 
         </div>}
 

@@ -38,7 +38,7 @@ function Kinkekaart() {
 
       <button disabled={kogus === 1} onClick={() => muudaKogus(kogus - 1)}>-</button>
       <span>{kogus}</span>
-      <button onClick={() => lisaOstukorvi()}>Lisa ostukorvi</button>
+      <button onClick={() => muudaKogus(kogus + 1)}>+</button>
    
    <br /> <br />
 

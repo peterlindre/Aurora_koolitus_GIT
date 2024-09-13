@@ -2,6 +2,14 @@ import React, { useState } from 'react'
 
 
 function Avaleht() {
+// kõik mida pole tavalises JavaScriptis ja on Reactis, tuleb importida. useState, useRef
+// kõik mida pole tavalises HTMLs ja on Reactis, tuleb importida. Link, Route, Routes, BrowserRouter
+
+  //  muutuja on HTMLs
+//            muutja läheb käima onClick
+//                        useState -> importida, sest tegemist on Reacti koodiga, mida pole JS-s
+//                                    algväärtus -> kui refreshida või lehelt ära minna ja tagasi tulla
+  //    [muutuja, muutja]   = useState(ALGVÄÄRTUS)
 
   const [kogus, muudaKogus] = useState(0);
   const [sonum, muudaSonum] = useState ("Muuda kogust!")

@@ -22,10 +22,12 @@ const logiSisse = () => {
 } else {
   muudaSonum("Vale parool") ;
 }
+}
 const logiValja = () => {
   muudaSisselogitud("ei");
   muudaSonum("");
 }
+
 
   return (
     <div className="App">
@@ -63,4 +65,4 @@ const logiValja = () => {
   );
 }
 
-export default App;
+export default App; 
