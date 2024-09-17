@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import KontaktAndmed from '../../components/KontaktAndmed';
 
 
 function Avaleht() {
@@ -48,6 +49,7 @@ function Avaleht() {
       <span>{kogus}</span>
       <button onClick={suurenda}>+</button>
 
+        <KontaktAndmed/>
       </div>
   )
 }

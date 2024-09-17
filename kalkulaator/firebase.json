@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "kalkulaator-d0b9f-32a6d",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

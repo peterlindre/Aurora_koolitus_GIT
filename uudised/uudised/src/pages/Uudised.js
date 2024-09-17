@@ -4,32 +4,32 @@ function Uudised() {
     <br />
     <br />
 <div>
-<a href="https://majandus.postimees.ee/8089669/perefirma-kaebas-eesti-kutuseturu-parast-euroopa-komisjonile"> Perefirma kaebas Eesti kütuseturu pärast Euroopa komisjonile</a>
+<a target='_blank' rel="noreferrer" href="https://majandus.postimees.ee/8089669/perefirma-kaebas-eesti-kutuseturu-parast-euroopa-komisjonile"> Perefirma kaebas Eesti kütuseturu pärast Euroopa komisjonile</a>
     <br />
     <br />
 </div>
-<a href="https://majandus.postimees.ee/8089600/inspektsioon-tunnistas-kehtetuks-tele2-eesti-krediidiandja-tegevusloa"> Inspektsioon tunnistas kehtetuks Tele2 Eesti krediidiandja tegevusloa</a>
+<a target='_blank' rel="noreferrer" href="https://majandus.postimees.ee/8089600/inspektsioon-tunnistas-kehtetuks-tele2-eesti-krediidiandja-tegevusloa"> Inspektsioon tunnistas kehtetuks Tele2 Eesti krediidiandja tegevusloa</a>
 <div>
 <br />
 
-<a href="https://majandus.postimees.ee/8089008/korteriuhistute-liit-korteri-remondist-tuleb-teavitada"> Korteriühistute Liit: korteri remondist tuleb teavitada</a>
+<a  target='_blank' rel="noreferrer" href="https://majandus.postimees.ee/8089008/korteriuhistute-liit-korteri-remondist-tuleb-teavitada"> Korteriühistute Liit: korteri remondist tuleb teavitada</a>
 </div>
 <br />
 <div>
-<a href="https://majandus.postimees.ee/8089779/ettevotja-jaak-nigul-eestis-valitseb-soovmotlemine-et-toostust-pole-vaja"> Ettevõtja Jaak Nigul: Eestis valitseb soovmõtlemine, et tööstust pole vaja</a>
+<a target='_blank' rel="noreferrer" href="https://majandus.postimees.ee/8089779/ettevotja-jaak-nigul-eestis-valitseb-soovmotlemine-et-toostust-pole-vaja"> Ettevõtja Jaak Nigul: Eestis valitseb soovmõtlemine, et tööstust pole vaja</a>
 </div>
 <br />
 
 <div>
-<a href="https://majandus.postimees.ee/8089813/neljapaeval-langeb-elektrihind-kolmandiku-vorra"> Neljapäeval langeb elektrihind kolmandiku võrra</a>
+<a target='_blank' rel="noreferrer" href="https://majandus.postimees.ee/8089813/neljapaeval-langeb-elektrihind-kolmandiku-vorra"> Neljapäeval langeb elektrihind kolmandiku võrra</a>
 </div>
 <br />
 <div>
-<a href="https://wallstreetjournal.postimees.ee/8089675/wsj-euroopa-kohtu-otsus-piiras-konkurentsivoliniku-voimu"> WSJ: Euroopa kohtu otsus piiras konkurentsivoliniku võimu</a>
+<a  target='_blank' rel="noreferrer" href="https://wallstreetjournal.postimees.ee/8089675/wsj-euroopa-kohtu-otsus-piiras-konkurentsivoliniku-voimu"> WSJ: Euroopa kohtu otsus piiras konkurentsivoliniku võimu</a>
 </div>
 <br />
 <div>
-<a href="https://majandus.postimees.ee/8089621/seb-eesti-volakirjad-margitakse-suure-toenaosusega-tais"> SEB: Eesti võlakirjad märgitakse suure tõenäosusega täis</a>
+<a target='_blank' rel="noreferrer" href="https://majandus.postimees.ee/8089621/seb-eesti-volakirjad-margitakse-suure-toenaosusega-tais"> SEB: Eesti võlakirjad märgitakse suure tõenäosusega täis</a>
 </div>
 <br />
 <div>

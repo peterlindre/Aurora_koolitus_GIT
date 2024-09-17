@@ -1,4 +1,5 @@
 import React, {useRef, useState} from 'react'
+import KontaktAndmed from '../../components/KontaktAndmed';
 
 function Kinkekaart() {
   // Näide: keel ja esindused
@@ -6,6 +7,11 @@ function Kinkekaart() {
   const [kogus, muudaKogus] = useState(1);
   const emailRef = useRef();
   const [sonum, muudaSonum] = useState("");
+  const emailSendRef = useRef();
+  const [isSend, muudaSend] = useState(false);
+
+
+
 
 
 
@@ -21,11 +27,19 @@ function Kinkekaart() {
   // }
 
   const lisaOstukorvi = () => {
+    if(emailSendRef.current.checked === false) {
+      muudaSonum("kinkekaardid summas" + (summa * kogus) + "€ lisatud ostukorvi");
+      return;
+    }
       if (emailRef.current.value.includes("@") === false) {
         muudaSonum("Email ei ole õige");
       } else {
         muudaSonum("kinkekaardid summas" + (summa * kogus) + "€ lisatud ostukorvi")
       }
+  }
+  const muudaEmailSend = () => {
+    // checkboxi tuleb panna curren.value asemel current.checked
+    muudaSend(emailSendRef.current.checked);
   }
 
   return (
@@ -46,10 +60,20 @@ function Kinkekaart() {
   
       <div>Kokku: {summa * kogus} € </div>
 <br /> <br />
+
+    <label htmlFor="emailSend">Saada e-mailile</label>
+      <input id="emailSend" onClick={muudaEmailSend} ref={emailSendRef} type="checkbox" />
+      <br /><br />
       <div>{sonum}</div>
+     {isSend === true && <>
       <label>Email</label> <br />
       <input ref={emailRef} type="text" /> <br />
+      </>}
       <button onClick={lisaOstukorvi}>Lisa ostukorvi</button> <br />
+   
+   <br /><br />
+   
+      <KontaktAndmed/>
     </div>
 
   )

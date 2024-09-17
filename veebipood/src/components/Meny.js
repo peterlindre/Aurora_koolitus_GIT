@@ -11,12 +11,7 @@ function Meny() {
       <Link to='/osta-kinkekaart'>
         <button className="nupp">kinkekaart</button>
       </Link>
-      <Link to='/esindused'>
-        <button className="nupp">esindused</button>
-      </Link>
-      <Link to='/ostukorv'>
-        <button className="nupp">ostukorv</button>
-      </Link>
+      
       <Link to='/lisa-toode'>
         <button className="nupp">lisa-tode</button>
       </Link>
@@ -32,8 +27,23 @@ function Meny() {
       <Link to='/registreeru'>
         <button className="nupp">Registreeru</button>
       </Link>
-
-    
+      <br /><br />
+      <Link to='/esindused'>
+        <button className="nupp">esindused</button>
+      </Link>
+      <Link to='/ostukorv'>
+        <button className="nupp">ostukorv</button>
+      </Link>
+      <Link to='/hinnad'>
+        <button className="nupp">Hinnad</button>
+      </Link>
+      <Link to='/tootajad'>
+        <button className="nupp">Töötajd</button>
+      </Link>
+      <Link to='/tooted'>
+        <button className="nupp">Tooted</button>
+      </Link>
+  
     </div>
   )
 }
