@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-// "Nobe", "BMW", "Tesla", "Bentley", "Toyota", "Nissan"
-// const [tooted, muudaTooted] = 
+
+
 
 function Tooted() {
+  const [tooted, muudaTooted] =  useState(["Nobe", "BMW", "Tesla", "Bentley", "Toyota", "Nissan"]);
   return (
-    <div>Tooted</div>
+    <div>
+      {tooted.map(toode=> <div>{toode}</div>)}
+      <div>Tooted</div>
+    </div>
+
+
   )
 }
 
