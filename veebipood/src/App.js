@@ -19,6 +19,13 @@ import Hinnad from './pages/arrays/Hinnad';
 import Tooted from './pages/arrays/Tooted';
 import Tootajad from './pages/arrays/Tootajad';
 
+
+import HaldaEsindused from './pages/halda/HaldaEsindused';
+import HaldaHinnad from './pages/halda/HaldaHinnad';
+import HaldaTooted from './pages/halda/HaldaTooted';
+import HaldaTootajad from './pages/halda/HaldaTootajad';
+
+
 function App() {
   return (
     <div className="App">
@@ -43,6 +50,11 @@ function App() {
         <Route path='hinnad' element={ <Hinnad/>} />
         <Route path='tooted' element={ <Tooted/>} />
         <Route path='tootajad' element={ <Tootajad/>} />
+
+        <Route path='halda-esindused' element={ <HaldaEsindused/>} />
+        <Route path='halda-hinnad' element={ <HaldaHinnad/>} />
+        <Route path='halda-tooted' element={ <HaldaTooted/>} />
+        <Route path='halda-tootajad' element={ <HaldaTootajad/>} />
        
        
         

@@ -20,7 +20,7 @@ function App() {
 
   }
   function liida () {
-    muudaVastus(input1Ref.current.value - input2Ref.current.value);
+    muudaVastus(+input1Ref.current.value + +input2Ref.current.value);
 
   }
 
