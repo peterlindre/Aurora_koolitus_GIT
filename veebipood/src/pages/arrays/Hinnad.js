@@ -1,9 +1,14 @@
 import React, { useState} from 'react';
+import hinnadJSON from "../../data/hinnad.json"
+import { useRef } from 'react';
+
 
 function Hinnad() {
-  const [hinnad, muudaHinnad] = useState([20, 8, 150, 3, 123, 32, 9, 1111, 71, 555]); 
+  const [hinnad, muudaHinnad] = useState(hinnadJSON); 
+  const otsingRef = useRef (); 
+
   const reset = () => {
-    muudaHinnad([20, 8, 150, 3, 123, 32, 9, 1111, 71, 555]);
+    muudaHinnad(hinnadJSON);
   }
 
 
@@ -28,16 +33,43 @@ const sorteeriZA = () => {
   
 }
 const filtreeriSuuremadKui20 = () => {
-const vastus = hinnad.filter(hind => hind > 20 );
+const vastus = hinnadJSON.filter(hind => hind > 20 );
 muudaHinnad(vastus);
 }
 const filtreeriVaiksemadKui100 = () => {
-  const vastus = hinnad.filter(hind => hind  < 100 );
+  const vastus = hinnadJSON.filter(hind => hind  < 100 );
 muudaHinnad(vastus);
+}
+// const [summa2, muudaSumma] = useState(0);
+//const --> v6rdusm2rgiga ei saa uut v22rtust anda
+// let --> luba anda uus v22rtus v6rdusm2rgiga
+const liidaKokku = () => {
+  let summa = 0;
+  // summa = summa + 20;
+  // summa = summa + 8;
+  // summa = summa + 150;
+hinnad.forEach(hind => summa = summa + hind);
+  // muudaSumma(summa);
+  return summa;
+}
+// onClick={lisa} --> muutujat ei saa funktsiooni lisada
+// onClikc={() => kustuta(index)} --> muutuja saadan funktsiooni
+// xx onClick={liidaKokku} ---> see on vale sest ei oota klikki ara, paneb kohe kaima
+// <div>{liidaKokku()}</div> --> paneb funktsiooni koheselt käima
+//xx <div>{liidaKokku}</div> --> keegi ei käivita
+//xx <div>{() => liidaKokku()}</div> --> keegi ei käivita
+const otsi = () => {
+  const vastus = hinnadJSON.filter(hind => String(hind).includes(otsingRef.current.value) );
+  muudaHinnad(vastus);
 }
 
   return (
     <div>
+      <input ref={otsingRef} onChange={otsi} type="text" />
+      {/* <button onClick={otsi}>Otsi</button> */}
+      <div>Minu hindade kogusumma: {liidaKokku()} €</div>
+      {/* <button onClick={liidaKokku}>Uuenda hindade kogusumma</button> */}
+      <br />
       <br />
       <button onClick={reset}>Reset</button>
       <br /><br />

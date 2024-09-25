@@ -1,22 +1,33 @@
 import React, { useState } from 'react'
+import { useRef } from 'react';
+import esindusedFailist from "../../data/esindused.json"
+
+// .sort((a,b) => a-b )
+// lahumistehe - paneb numbrid jarjekorda
+
+//.sort ((a,b) => a.localeCompare(b) )
+// locale - keel
+// Compare - v6rdle
 
 function Esindused() {
 const [linn, muudaLinn] = useState("Tallinn");
-const [keskused, muudaKeskused] = useState (["Ülemiste","Rocca al Mare","Magistrali","Vesse", "Kristiine", "Järveotsa"]);
+const [keskused, muudaKeskused] = useState (esindusedFailist.slice());
+const otsinguRef = useRef () ; 
+
 const reset = () => {
-  muudaKeskused (["Ülemiste","Rocca al Mare","Magistrali","Vesse", "Kristiine", "Järveotsa"])
+  muudaKeskused (esindusedFailist.slice());
 }
 
-
+// "et" v6tab eesti keelse t2hestiku
 const sorteeriAZ = () => {
-  keskused.sort((a,b) => a.localeCompare(b));
+  keskused.sort((a,b) => a.localeCompare(b, "et"));
   muudaKeskused(keskused.slice()); // HTMLi uuendamiseks
 }
 
 const sorteeriZA = () => {
   // keskused.sort();
   // keskused.reverse();
-  keskused.sort((a,b) => b.localeCompare(a));
+  keskused.sort((a,b) => b.localeCompare(a, "et"));
   muudaKeskused(keskused.slice()); 
 }
 
@@ -35,27 +46,45 @@ const sorteeriKolmasTahtAZ = () => {
 
 const filtreeriEgaLoppevad = () => {
   // filtreerimisel tuleb teha uus muutuja kuhu sisse jaavad alles jaetud elemendid
-const vastus = keskused.filter(keskus => keskus.endsWith("e"));
+const vastus = esindusedFailist.filter(keskus => keskus.endsWith("e"));
 muudaKeskused(vastus);
 }
 const filtreeriVahemalt7Tahelised = () => {
-const vastus = keskused.filter(keskus => keskus.length >= 7);
+const vastus = esindusedFailist.filter(keskus => keskus.length >= 7);
 muudaKeskused(vastus);
 }
 const filtreeriVahemalt9Tahelised = () => {
-  const vastus = keskused.filter(keskus => keskus.length === 9);
+  const vastus = esindusedFailist.filter(keskus => keskus.length === 9);
 muudaKeskused(vastus);
 }
 const filtreeriIsSisaldavad = () => {
-  const vastus = keskused.filter(keskus => keskus.includes ("is"));
+  const vastus = esindusedFailist.filter(keskus => keskus.includes ("is"));
 muudaKeskused(vastus);
 }
 const filtreeriKolmasTahtI = () => {
-  const vastus = keskused.filter(keskus => keskus[3] === ("s"));
+  const vastus = esindusedFailist.filter(keskus => keskus[3] === ("s"));
 muudaKeskused(vastus);
 }
+
+const otsi = () => {
+  const vastus = esindusedFailist.filter(keskus => keskus.includes (otsinguRef.current.value));
+  muudaKeskused(vastus);
+}
+
+const arvutaKokku = () => {
+  let summa = 0; //=> summa += keskus.lenght... ---> liida vanale summale
+  keskused.forEach(keskus => summa =  summa + keskus.length);
+return summa;
+}
+
   return (
     <div>
+      <div>Esinduse nimetähtede arv kokku: {arvutaKokku()} tk</div>
+
+
+      <input ref={otsinguRef} onChange={otsi} type="text" />
+      {/* <button onClick={otsi}>Otsi</button> */}
+      <br /><br />
       <div>Aktiivne linn: {linn}</div>
       <button className= {linn === "Tallinn" ? "linn-aktiivne" : undefined} onClick={() => muudaLinn("Tallinn")}>Tallinn</button> 
       <button className= {linn === "Tartu" ? "linn-aktiivne" : undefined} onClick={() => muudaLinn("Tartu")}>Tartu</button>
