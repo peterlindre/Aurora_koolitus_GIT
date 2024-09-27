@@ -1,5 +1,5 @@
 import {useRef, useState} from "react";
-import andjateFail from "../nimed.json";
+import andjateFail from "./nimed.json";
 
 
 

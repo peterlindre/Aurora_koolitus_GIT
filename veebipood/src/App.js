@@ -24,6 +24,15 @@ import HaldaEsindused from './pages/halda/HaldaEsindused';
 import HaldaHinnad from './pages/halda/HaldaHinnad';
 import HaldaTooted from './pages/halda/HaldaTooted';
 import HaldaTootajad from './pages/halda/HaldaTootajad';
+import YksEsindus from './pages/yks/YksEsindus';
+import YksHind from './pages/yks/YksHind';
+import YksTootaja from './pages/yks/YksTootaja';
+import YksToode from './pages/yks/YksToode';
+import MuudaEsindus from './pages/muuda/MuudaEsindus';
+import MuudaHind from './pages/muuda/MuudaHind';
+import MuudaToode from './pages/muuda/MuudaToode';
+import MuudaTootaja from './pages/muuda/MuudaTootaja';
+import { ContactUs } from './pages/useRef/ContactUs';
 
 
 function App() {
@@ -56,8 +65,17 @@ function App() {
         <Route path='halda-tooted' element={ <HaldaTooted/>} />
         <Route path='halda-tootajad' element={ <HaldaTootajad/>} />
        
-       
+        <Route path='esindus/:index' element={ <YksEsindus/>} />
+        <Route path='hind/:index' element={ <YksHind/>} />
+        <Route path='toode' element={ <YksToode/>} />
+        <Route path='tootaja' element={ <YksTootaja/>} />
+
+        <Route path='muuda-esindus/:index' element={ <MuudaEsindus/>} />
+        <Route path='muuda-hind/:index' element={ <MuudaHind/>} />
+        <Route path='muuda-toode' element={ <MuudaToode/>} />
+        <Route path='muuda-tootaja' element={ <MuudaTootaja/>} />
         
+        <Route path='kontakteeru' element={ <ContactUs/>} />
 
         <Route path='*' element={ <NotFound />} />
       </Routes>

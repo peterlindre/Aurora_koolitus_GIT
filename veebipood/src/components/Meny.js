@@ -8,6 +8,9 @@ function Meny() {
       <Link to='/avaleht'>
       <img className="pilt" src="https://digi.geenius.ee/app/uploads/sites/7/2020/05/4e8cd4ef7f6f6a06695160e1b2d37c23-1920x1280.jpg" alt="pilt" />
       </Link>
+      <Link to='/kontakteeru'>
+        <button className="nupp">Kontakteeru</button>
+      </Link>
       <Link to='/osta-kinkekaart'>
         <button className="nupp">kinkekaart</button>
       </Link>
