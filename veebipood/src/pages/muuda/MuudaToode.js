@@ -1,16 +1,14 @@
-import React from 'react'
-
 // Kodus:
 // 6 faili:
-// HaldaTootajad.js ---> kustutamine + lisamine. faili tõstmised. otsing
-// HaldaTooted.js ---> kustutamine + lisamine. faili tõstmised. otsing
+// HaldaTootajad.js TEHTUD ---> kustutamine + lisamine. faili tõstmised. otsing
+// HaldaTooted.js  TEHTUD ---> kustutamine + lisamine. faili tõstmised. otsing
 // Testimiseks: kustutage 1 element ja vaadake "Tootajad.js" või "Toode.js"
 //            lehelt, kas ta kustus
 
-// YksTootaja
-// YksToode
-// MuudaTootaja
-// MuudaToode
+// YksTootaja TEHTUD
+// YksToode TEHTUD
+// MuudaTootaja TEHTUD
+// MuudaToode TEHTUD 
 
 // Kust läheme: Halda lehelt (muuda) või Tooted.js / Tootajad.js
 // <Link> import  "react-router-dom"
@@ -25,9 +23,23 @@ import React from 'react'
 // import tootajadFailist õigesti
 
 
+import React from 'react'
+import { useParams } from 'react-router-dom';
+import tootedFailist from "../../data/tooted.json";
+
 function MuudaToode() {
+  const{index} = useParams ();
+  const leitud = tootedFailist[index]
+
+
+
+
   return (
-    <div>MuudaToode</div>
+    <div>
+      <label> Toode</label> <br />
+      <input type="text" defaultValue={leitud} /> <br />
+      <button>Muuda</button>
+    </div>
   )
 }
 

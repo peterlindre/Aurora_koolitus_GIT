@@ -1,22 +1,63 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import tootedJSON from "../../data/tooted.json"
+import { Link } from 'react-router-dom';
 
-//kodus
-
-// 'lisamine mingi kindla toote osas
-// lisamine l2bi vormi
-// 'kustutamine esimene, teine, kolmas, neljas
-//kustutamine
-//tyhjendamine 
-// koguarvu v2lja n2itamine
-// dynaamika -> n2ita nuppu voi teksti kui pikkus on sobiv (&& abil)
 
 function HaldaTooted() {
-  const [keskused, muudaKeskused] = useState (["Ülemiste","Rocca al Mare","Magistrali","Vesse", "Kristiine", "Järveotsa"]);
+  const [tootajad, muudaTooted] = useState (tootedJSON);
+  const tootedRef = useRef(); 
+
+  const kustutaEsimene = () =>{
+    tootedJSON.splice(0,1);
+    muudaTooted(tootedJSON.slice());
+}
+    const kustutaTeine = () =>{
+      tootedJSON.splice(1,1);
+      muudaTooted(tootedJSON.slice());
+}
+      const kustutaKolmas = () =>{
+        tootedJSON.splice(2,1);
+        muudaTooted(tootedJSON.slice());
+}
+        const kustutaNeljas = () =>{
+          tootedJSON.splice(3,1);
+          muudaTooted(tootedJSON.slice());
+ }
+ const lisa = () => {
+  tootedJSON.push(tootedRef.current.value);
+  muudaTooted(tootedJSON.slice());
+ }
+ 
+
+ const kustuta = (index) => {
+  tootedJSON.splice(index,1);
+  muudaTooted(tootedJSON.slice());
+ }
+
 
   return (
     <div>
-      {keskused.map(keskus => <div>{keskus}</div>)}
-    </div>
+      <br />
+      <button onClick={kustutaEsimene}>Kustuta esimene</button>
+      <button onClick={kustutaTeine}>Kustuta teine</button>
+      <button onClick={kustutaKolmas}>Kustuta kolmas</button>
+      <button onClick={kustutaNeljas}>Kustuta neljas</button>
+      <br /> <br />
+       <label>Tooted</label> 
+       <input ref={tootedRef} type="text" />
+      <button onClick={lisa}>Lisa</button><br /> 
+      <br />
+      {tootajad.map((toode, index) => 
+      <div>
+        <div>{toode}</div>
+      <button onClick={() => kustuta(index)}>X</button>
+      <Link to={"/muuda-toode/" + index} >
+        <button>Muuda</button>
+      </Link>
+      </div>
+)}
+      </div>
+    
   )
 }
 

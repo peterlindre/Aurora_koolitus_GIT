@@ -67,13 +67,13 @@ function App() {
        
         <Route path='esindus/:index' element={ <YksEsindus/>} />
         <Route path='hind/:index' element={ <YksHind/>} />
-        <Route path='toode' element={ <YksToode/>} />
-        <Route path='tootaja' element={ <YksTootaja/>} />
+        <Route path='toode/:index' element={ <YksToode/>} />
+        <Route path='tootaja/:index' element={ <YksTootaja/>} />
 
         <Route path='muuda-esindus/:index' element={ <MuudaEsindus/>} />
         <Route path='muuda-hind/:index' element={ <MuudaHind/>} />
-        <Route path='muuda-toode' element={ <MuudaToode/>} />
-        <Route path='muuda-tootaja' element={ <MuudaTootaja/>} />
+        <Route path='muuda-toode/:index' element={ <MuudaToode/>} />
+        <Route path='muuda-tootaja/:index' element={ <MuudaTootaja/>} />
         
         <Route path='kontakteeru' element={ <ContactUs/>} />
 
