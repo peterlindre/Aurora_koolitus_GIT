@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import Hinnad from './Hinnad';
+import tootedJSON from "../../data/tooted.json"
+import { useRef } from 'react';
+import { Link } from 'react-router-dom';
+// import Hinnad from './Hinnad';
 
 
 //filtreeri
@@ -14,10 +17,14 @@ import Hinnad from './Hinnad';
   // 3 nuppu: Bga algavad, Nga algavad, Tga algavad
 
 function Tooted() {
-  const [tooted, muudaTooted] =  useState(["Nobe", "BMW", "Tesla", "Bentley", "Toyota", "Nissan"]);
+  const [tooted, muudaTooted] =  useState(tootedJSON);
+  const otsingRef = useRef();
+
   const reset = () => {
-    muudaTooted (["Nobe", "BMW", "Tesla", "Bentley", "Toyota", "Nissan"]);
+    muudaTooted (tootedJSON);
   }
+
+
   const sorteeriKasvavalt = () => {
     tooted.sort((a, b) => a.length - b.length);
     muudaTooted(tooted.slice());
@@ -38,22 +45,36 @@ function Tooted() {
     
   }
   const filtreeriAlgavadB = () => {
-    const vastus = tooted.filter(tootaja => tootaja[0] === "B")
+    const vastus = tootedJSON.filter(toode => toode[0] === "B")
     muudaTooted(vastus);
   }
  
 
   const filtreeriAlgavadN = () => {
-    const vastus = tooted.filter(tootaja => tootaja[0] === "N")
+    const vastus = tootedJSON.filter(toode => toode[0] === "N")
     muudaTooted(vastus);
   }
   const filtreeriAlgavadT = () => {
-    const vastus = tooted.filter(tootaja => tootaja[0] === "T")
+    const vastus = tootedJSON.filter(toode => toode[0] === "T")
     muudaTooted(vastus);
   }
+  const otsi = () => {
+    const vastus = tootedJSON.filter(toode => String(toode).includes(otsingRef.current.value) );
+    muudaTooted(vastus);
+  }
+  const arvutaKokku = () => {
+    let summa = 0; //=> summa += keskus.lenght... ---> liida vanale summale
+    tooted.forEach(tooted => summa =  summa + tooted.length);
+  return summa;
+  }
+  
   
   return (
     <div>
+       <div>Toodete nimetähtede arv kokku: {arvutaKokku()} tk</div>
+      <input ref={otsingRef} onChange={otsi} type="text" />
+      
+
 
 <br />
       <button onClick={reset}>Reset</button>
@@ -69,9 +90,12 @@ function Tooted() {
       <br /><br />
       
       <br /><br />
-      {tooted.map(toode=> <div>{toode}</div>)}
-
-      <div>Tooted</div>
+      
+      {tooted.map((toode, index) => 
+      <Link to={"/toode/" + index}>
+        <button>{toode}</button>
+      </Link>
+        )}
     </div>
 
 

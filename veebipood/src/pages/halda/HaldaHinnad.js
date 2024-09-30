@@ -40,7 +40,7 @@ function HaldaHinnad() {
   hinnadJSON.splice(index,1);
   muudaHinnad(hinnadJSON.slice());
  }
- 
+  
   return (
     <div>
       <br />

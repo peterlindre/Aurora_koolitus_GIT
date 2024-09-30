@@ -23,16 +23,17 @@
 // import tootajadFailist õigesti
 
 //JUURDE TEHA: YksToode j6udmine. tooted.js lehelt. hinnad,tootajad failis.VT lahemalt vaade 
-// Tooted.js ja Tootajad.js t2htede kokkuarvutus nagu Esindused.js failis
-// Tooted.js Tootajad.js search bar teha. 
+// Tooted.js ja Tootajad.js t2htede kokkuarvutus nagu Esindused.js failis TEHTUD
+// Tooted.js Tootajad.js search bar teha.  TEHTUD
+
 
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import tootedFailist from "../../data/tooted.json";
+import tootedJSON from "../../data/tooted.json";
 
 function MuudaToode() {
   const{index} = useParams ();
-  const leitud = tootedFailist[index]
+  const leitud = tootedJSON[index]
 
 
 

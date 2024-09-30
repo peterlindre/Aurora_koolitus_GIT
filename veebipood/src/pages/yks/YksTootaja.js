@@ -1,11 +1,12 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import tootajadFailist from "../../data/tootajad.json";
+import tootajadJSON from "../../data/tootajad.json";
+
 
 
 function YksTootaja() {
 const {index} = useParams();
-const leitud = tootajadFailist[index];
+const leitud = tootajadJSON[index];
   return (
     <div>
       <div>Järjekorranumber: {index} </div>
@@ -13,7 +14,7 @@ const leitud = tootajadFailist[index];
       <div>Töötaja kontakt:</div>
       {false && <div>Töötaja puudub </div>}
     </div>
-  )
+  ) 
 }
 
 export default YksTootaja

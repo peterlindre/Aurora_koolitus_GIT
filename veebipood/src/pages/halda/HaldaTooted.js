@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 function HaldaTooted() {
-  const [tootajad, muudaTooted] = useState (tootedJSON);
+  const [tooted, muudaTooted] = useState (tootedJSON);
   const tootedRef = useRef(); 
 
   const kustutaEsimene = () =>{
@@ -47,7 +47,7 @@ function HaldaTooted() {
        <input ref={tootedRef} type="text" />
       <button onClick={lisa}>Lisa</button><br /> 
       <br />
-      {tootajad.map((toode, index) => 
+      {tooted.map((toode, index) => 
       <div>
         <div>{toode}</div>
       <button onClick={() => kustuta(index)}>X</button>

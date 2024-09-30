@@ -14,36 +14,37 @@ import { Link } from 'react-router-dom';
 
 
 function HaldaTootajad() {
-  const [keskused, muudaKeskused] = useState (tootajadJSON);
+  const [tootajad, muudaTootajad] = useState (tootajadJSON);
   const tootajaRef = useRef();
-
+ 
   const kustutaEsimene = () =>{
     tootajadJSON.splice(0,1);
-    muudaKeskused(tootajadJSON.slice());
+    muudaTootajad(tootajadJSON.slice());
   
 }
 const kustutaTeine = () =>{
   tootajadJSON.splice(1,1);
-  muudaKeskused(tootajadJSON.slice());
+  muudaTootajad(tootajadJSON.slice());
 }
   const kustutaKolmas = () =>{
     tootajadJSON.splice(2,1);
-    muudaKeskused(tootajadJSON.slice());
+    muudaTootajad(tootajadJSON.slice());
 }
     const kustutaNeljas = () =>{
       tootajadJSON.splice(3,1);
-      muudaKeskused(tootajadJSON.slice());
+      muudaTootajad(tootajadJSON.slice());
 }
 const lisa = () => {
 tootajadJSON.push(tootajaRef.current.value);
-muudaKeskused(tootajadJSON.slice());
+muudaTootajad(tootajadJSON.slice());
 }
 const kustuta = (index) => {
 tootajadJSON.splice(index,1);
-muudaKeskused(tootajadJSON.slice());
+muudaTootajad(tootajadJSON.slice());
 }
 
   return (
+
     <div>
        <br />
       <button onClick={kustutaEsimene}>Kustuta esimene</button>
@@ -55,9 +56,9 @@ muudaKeskused(tootajadJSON.slice());
        <input ref={tootajaRef} type="text" />
       <button onClick={lisa}>Lisa</button><br /> 
       <br />
-      {keskused.map((hind, index) => 
+      {tootajad.map((tootaja, index) => 
       <div>
-        <div>{hind}</div>
+        <div>{tootaja}</div>
       <button onClick={() => kustuta(index)}>X</button>
       <Link to={"/muuda-tootaja/" + index} >
         <button>Muuda</button>

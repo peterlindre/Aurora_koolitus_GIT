@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import tootajadJSON from "../../data/tootajad.json"
+import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 // Sorteeri
   // 1. A-Z -- TEHTUD
   // 2. Z-A -- TEHTUD
@@ -17,9 +19,11 @@ import tootajadJSON from "../../data/tootajad.json"
 
   // Reset nupp
 function Tootajad() {
-  const [tootajad, muudaTootajad] = useState(tootajadJSON)
+  const [tootajad, muudaTootajad] = useState(tootajadJSON);
+  const otsingRef = useRef ();
+
   const reset = () => {
-    muudaTootajad(tootajadJSON)
+    muudaTootajad(tootajadJSON);
   }
     const sorteeriKasvavalt = () => {
       tootajad.sort((a, b) => a.localeCompare(b));
@@ -42,19 +46,32 @@ function Tootajad() {
 
   }
   const filtreeriRoh5Tahelised = () => {
-    const vastus = tootajad.filter(tootaja => tootaja.length === 5 );
+    const vastus = tootajadJSON.filter(tootaja => tootaja.length === 5 );
     muudaTootajad(vastus)
   }
   const filtreeriAlgavadM = () => {
-    const vastus = tootajad.filter(tootaja => tootaja[0] === "M")
+    const vastus = tootajadJSON.filter(tootaja => tootaja[0] === "M")
     muudaTootajad(vastus);
   }
   
-  return (
+  const otsing = () => {
+    const vastus = tootajadJSON.filter(tootaja => String(tootaja).includes(otsingRef.current.value) );
+    muudaTootajad(vastus);
+  }
+  const arvutaKokku = () => {
+    let summa = 0; //=> summa += keskus.lenght... ---> liida vanale summale
+    tootajad.forEach(tootaja => summa =  summa + tootaja.length);
+  return summa;
+  }
+  
+    return (
+
 
 
     <div>
+       <div>Töötajate nimetähtede arv kokku: {arvutaKokku()} tk</div>
       <br />
+      <input ref={otsingRef} onChange={otsing} type="text" />
       <button onClick={reset}>Reset</button>
       <br /><br />
       <button onClick={sorteeriKasvavalt}>Sorteeri kasvavalt</button>
@@ -66,11 +83,13 @@ function Tootajad() {
       <br /><br />
       
       <br /><br />
-      <div>Töötajad</div>
-      {tootajad.map(tootaja=> <div>{tootaja}</div>)}
-    
+      
+      {tootajad.map((tootaja, index) => 
+      <Link to={"/tootaja/" + index}>
+        <button>{tootaja}</button>
+      </Link>
+       )}
     </div>
   )
 }
-
 export default Tootajad
