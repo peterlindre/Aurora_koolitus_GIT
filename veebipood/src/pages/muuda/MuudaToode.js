@@ -22,6 +22,9 @@
 // useParams import "react-router-dom"
 // import tootajadFailist õigesti
 
+//JUURDE TEHA: YksToode j6udmine. tooted.js lehelt. hinnad,tootajad failis.VT lahemalt vaade 
+// Tooted.js ja Tootajad.js t2htede kokkuarvutus nagu Esindused.js failis
+// Tooted.js Tootajad.js search bar teha. 
 
 import React from 'react'
 import { useParams } from 'react-router-dom';

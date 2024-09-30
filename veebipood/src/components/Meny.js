@@ -1,23 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 function Meny() {
+  const { t, i18n } = useTranslation();
+
+  // return <h1>{t('Welcome to React')}</h1>
+
   return (
     <div>
+
+      <button onClick={() => i18n.changeLanguage("en")}>English</button>
+      <button onClick={() => i18n.changeLanguage("et")}>Eesti</button>
       
       <Link to='/avaleht'>
       <img className="pilt" src="https://digi.geenius.ee/app/uploads/sites/7/2020/05/4e8cd4ef7f6f6a06695160e1b2d37c23-1920x1280.jpg" alt="pilt" />
       </Link>
       <Link to='/kontakteeru'>
-        <button className="nupp">Kontakteeru</button>
+        <button className="nupp">{t("contact")}</button>
       </Link>
       <Link to='/osta-kinkekaart'>
-        <button className="nupp">kinkekaart</button>
+        <button className="nupp">{t("kinkekaart")}</button>
       </Link>
-      
-      <Link to='/lisa-toode'>
-        <button className="nupp">lisa-tode</button>
-      </Link>
+    
       <Link to='/seaded'>
         <button className="nupp">seaded</button>
       </Link>
@@ -46,20 +51,16 @@ function Meny() {
       <Link to='/tooted'>
         <button className="nupp">Tooted</button>
       </Link>
+      <Link to='/shops'>
+        <button className="nupp">Shops</button>
+      </Link>
 
       <br /><br />
-      <Link to='/halda-esindused'>
-        <button className="nupp">Halda esindusi</button>
+     
+      <Link to='/admin'>
+        <button className="nupp">Admin</button>
       </Link>
-      <Link to='/halda-hinnad'>
-        <button className="nupp">Halda Hinnad</button>
-      </Link>
-      <Link to='/halda-tootajad'>
-        <button className="nupp">Halda Töötajaid</button>
-      </Link>
-      <Link to='/halda-tooted'>
-        <button className="nupp">Halda Tooteid</button>
-      </Link>
+
   
     </div>
   )

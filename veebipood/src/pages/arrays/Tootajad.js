@@ -1,25 +1,25 @@
 import React, { useState } from 'react'
-
+import tootajadJSON from "../../data/tootajad.json"
 // Sorteeri
-  // 1. A-Z -- 
-  // 2. Z-A -- 
+  // 1. A-Z -- TEHTUD
+  // 2. Z-A -- TEHTUD
   // 3. Tähed kasvavalt 
   // 4. Tähed kahanevalt
-  // 5. Teine täht A-Z
+  // 5. Teine täht A-Z TEHTUD
 
   // Filtreeri
   // 1. Täpselt 3 tähelised
-  // 2. Rohkem kui 5 tähelised
+  // 2. Rohkem kui 5 tähelised TEHTUD
   // 3. "ai" lühendit sisaldavad
   // 4. Kellel on neljas täht "i"
-  // 5. 'M' tähega algavad
+  // 5. 'M' tähega algavad TEHTUD
   // 6. Huvitav: Paarisarv tähti
 
   // Reset nupp
 function Tootajad() {
-  const [tootajad, muudaTootajad] = useState(["Margus","Tarmo","Jaanus","Mario","Kadri","Aare","Jaak","Rudolf","Silvia","Doris"])
+  const [tootajad, muudaTootajad] = useState(tootajadJSON)
   const reset = () => {
-    muudaTootajad(["Margus","Tarmo","Jaanus","Mario","Kadri","Aare","Jaak","Rudolf","Silvia","Doris"])
+    muudaTootajad(tootajadJSON)
   }
     const sorteeriKasvavalt = () => {
       tootajad.sort((a, b) => a.localeCompare(b));

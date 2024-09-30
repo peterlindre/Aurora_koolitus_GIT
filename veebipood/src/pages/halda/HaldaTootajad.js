@@ -51,7 +51,7 @@ muudaKeskused(tootajadJSON.slice());
       <button onClick={kustutaKolmas}>Kustuta kolmas</button>
       <button onClick={kustutaNeljas}>Kustuta neljas</button>
       <br /> <br />
-       <label>Keskus</label> 
+       <label>Töötajad</label> 
        <input ref={tootajaRef} type="text" />
       <button onClick={lisa}>Lisa</button><br /> 
       <br />

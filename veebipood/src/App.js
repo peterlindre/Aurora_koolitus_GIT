@@ -33,6 +33,8 @@ import MuudaHind from './pages/muuda/MuudaHind';
 import MuudaToode from './pages/muuda/MuudaToode';
 import MuudaTootaja from './pages/muuda/MuudaTootaja';
 import { ContactUs } from './pages/useRef/ContactUs';
+import Admin from './pages/useState/Admin';
+import Shops from './pages/useState/Shops';
 
 
 function App() {
@@ -76,6 +78,8 @@ function App() {
         <Route path='muuda-tootaja/:index' element={ <MuudaTootaja/>} />
         
         <Route path='kontakteeru' element={ <ContactUs/>} />
+        <Route path='admin' element={ <Admin/>} />
+        <Route path='shops' element={ <Shops/>} />
 
         <Route path='*' element={ <NotFound />} />
       </Routes>
