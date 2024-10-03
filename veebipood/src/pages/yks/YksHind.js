@@ -8,8 +8,8 @@ function YksHind() {
   return (
     <div>
       <div>Järjekorranumber:{index}</div>
-      <div>Hind: {leitud} </div>
-      <div>Lisaja:{} </div>
+      <div>Hind: {leitud.number} </div>
+      <div>Lisaja:{leitud.number} </div>
     </div>
   )
 }

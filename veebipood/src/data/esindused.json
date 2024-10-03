@@ -1,1 +1,12 @@
-["Ülemiste","Rocca al Mare","Magistrali","Vesse", "Kristiine", "Järveotsa", "Ämari"]
+[
+  {"nimi": "Ülemiste","tel": "+372 58100231", "aadr": "Suur-sõjamäe 4"},
+  {"nimi": "Rocca al Mare","tel": "+372 5600268", "aadr": "Paldiski mnt 102"},
+  {"nimi": "Magistrali","tel": "+372 58233311", "aadr": "Sõpruse pst 201"},
+  {"nimi": "Vesse","tel": "+372 58236743", "aadr": "J.Smuuli tee 43"},
+  {"nimi": "Kristiine","tel": "+372 53560231", "aadr": "Endla 45"},
+  {"nimi": "Järveotsa","tel": "+372 55162231", "aadr": "Järveotsa tee 50c"},
+  {"nimi": "Ämari","tel": "+372 58103221", "aadr": "Lennujaama 51"}
+ 
+
+
+]

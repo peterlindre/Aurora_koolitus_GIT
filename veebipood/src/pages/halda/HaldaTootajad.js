@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 
 function HaldaTootajad() {
-  const [tootajad, muudaTootajad] = useState (tootajadJSON);
+  const [tootajad, muudaTootajad] = useState (tootajadJSON.slice());
   const tootajaRef = useRef();
  
   const kustutaEsimene = () =>{

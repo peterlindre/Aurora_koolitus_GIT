@@ -1,1 +1,9 @@
-["Nobe", "BMW", "Tesla", "Bentley", "Toyota", "Nissan"]
+[
+  {"nimi": "Nobe", "hind": 25000, "aktiivne": true, "keskus":"Ülemiste", "pilt": "https.// .jpg vms l6puga"},
+  {"nimi": "BMW", "hind": 55000, "aktiivne": true, "keskus":"Vesse", "pilt": "https.// .jpg vms l6puga"},
+  {"nimi": "Tesla", "hind": 45000, "aktiivne": false, "keskus":"Kristiine", "pilt": "https.// .jpg vms l6puga"},
+  {"nimi": "Bentley", "hind": 232000, "aktiivne": true, "keskus":"Järveotsa", "pilt": "https.// .jpg vms l6puga"},
+  {"nimi": "Toyota", "hind": 25300, "aktiivne": false, "keskus":"Kristiine", "pilt": "https.// .jpg vms l6puga"},
+  {"nimi": "Nissan", "hind": 21400, "aktiivne": true, "keskus":"Ülemiste", "pilt": "https.// .jpg vms l6puga"}  
+ 
+]

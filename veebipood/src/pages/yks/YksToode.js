@@ -11,9 +11,11 @@ function YksToode() {
 
     <div>
       <div>Järjekorranumber:{index}</div>
-      <div>Toote nimi: {leitud}</div>
-      <div>Toote kogus:</div>
-      {false&&  <div>Seda toodet pole! </div>}
+      <div>Toote nimi: {leitud.nimi}</div>
+      <div>Toote hind:{leitud.hind}</div>
+      <div>Toote asukoht:{leitud.keskus}</div>
+      <div>Toote pilt:{leitud.pilt}</div>
+      {leitud.aktiivne === false && <i>Toode on mitteaktiivne</i>}
     </div>
   )
 }

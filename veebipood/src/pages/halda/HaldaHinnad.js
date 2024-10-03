@@ -3,7 +3,7 @@ import hinnadJSON from "../../data/hinnad.json"
 import { Link } from 'react-router-dom';
 
 function HaldaHinnad() {
-  const [hinnad, muudaHinnad] = useState (hinnadJSON);
+  const [hinnad, muudaHinnad] = useState (hinnadJSON.slice());
   const hindRef = useRef() ;
   
 
@@ -25,15 +25,15 @@ function HaldaHinnad() {
           muudaHinnad(hinnadJSON.slice());
  }
  const lisa = () => {
-  hinnadJSON.push(hindRef.current.value);
+  hinnadJSON.push({"number":hindRef.current.value, "lisaja": "Pille"});
   muudaHinnad(hinnadJSON.slice());
  }
  const lisa789 = () => {
-  hinnadJSON.push(789);
+  hinnadJSON.push({"number":789, "lisaja": "Toomas"});
   muudaHinnad(hinnadJSON.slice());
  }
  const lisa432 = () => {
-  hinnadJSON.push(432);
+  hinnadJSON.push({"number":432, "lisaja": "Malle"});
   muudaHinnad(hinnadJSON.slice());
  }
  const kustuta = (index) => {
@@ -57,7 +57,7 @@ function HaldaHinnad() {
       <button onClick={lisa432}>Lisa 432</button> 
       {hinnad.map((hind, index) => 
       <div>
-        <div>{hind}</div>
+        <div>{hind.number} ({hind.lisaja})</div>
       <button onClick={() => kustuta(index)}>X</button>
       <Link to={"/muuda-hind/" + index} >
         <button>Muuda</button>

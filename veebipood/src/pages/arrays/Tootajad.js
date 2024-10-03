@@ -19,11 +19,11 @@ import { Link } from 'react-router-dom';
 
   // Reset nupp
 function Tootajad() {
-  const [tootajad, muudaTootajad] = useState(tootajadJSON);
+  const [tootajad, muudaTootajad] = useState(tootajadJSON.slice());
   const otsingRef = useRef ();
 
   const reset = () => {
-    muudaTootajad(tootajadJSON);
+    muudaTootajad(tootajadJSON.slice());
   }
     const sorteeriKasvavalt = () => {
       tootajad.sort((a, b) => a.localeCompare(b));
