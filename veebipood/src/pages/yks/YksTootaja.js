@@ -10,11 +10,14 @@ const leitud = tootajadJSON[index];
   return (
     <div>
       <div>Järjekorranumber: {index} </div>
-      <div>Töötaja nimi: {leitud} </div>
-      <div>Töötaja kontakt:</div>
+      <div>Töötaja nimi: {leitud.nimi} </div>
+      <div>Töötaja telefon: {leitud.tel}</div>
+      <div>Töötaja amet: {leitud.amet}</div>
+      <div>Töötaja email: {leitud.email}</div>
       {false && <div>Töötaja puudub </div>}
     </div>
   ) 
 }
+
 
 export default YksTootaja

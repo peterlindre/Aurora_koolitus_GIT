@@ -110,6 +110,7 @@ return summa;
         <br />
           {keskused.map((keskus, index) =>   
             <div>
+              
               {keskus.nimi}:
               {keskus.tel}
               {keskus.aadr}

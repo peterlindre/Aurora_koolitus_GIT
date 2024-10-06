@@ -1,1 +1,9 @@
-["Madis", "Kaie", "Kadri", "Maiu", "Sille", "Magnus", "Robert"]
+[
+{"nimi": "Madis", "tel": 5866691, "amet": "Koristaja", "email":"madis@madis.ee"},
+{"nimi": "Kaie", "tel": 5800691, "amet": "Juhataja", "email":"kaie@kaie.ee"},
+{"nimi": "Kadri", "tel": 5869000, "amet": "Arendaja", "email":"kadri@kadri.ee"},
+{"nimi": "Maiu", "tel": 5866821, "amet": "Personalijuht", "email":"maiu@maiu.ee"},
+{"nimi": "Sille", "tel": 5568611, "amet": "Klienditeenindaja", "email":"sille@sille.ee"},
+{"nimi": "Magnus", "tel": 5666322, "amet": "Barista", "email":"magnus@magnus.ee"},
+{"nimi": "Robert", "tel": 5114621, "amet": "Abiline", "email":"robert@robert.ee"}
+]

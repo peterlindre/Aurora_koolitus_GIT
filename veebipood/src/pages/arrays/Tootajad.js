@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 // Sorteeri
   // 1. A-Z -- TEHTUD
   // 2. Z-A -- TEHTUD
+
   // 3. Tähed kasvavalt 
   // 4. Tähed kahanevalt
   // 5. Teine täht A-Z TEHTUD
@@ -26,12 +27,12 @@ function Tootajad() {
     muudaTootajad(tootajadJSON.slice());
   }
     const sorteeriKasvavalt = () => {
-      tootajad.sort((a, b) => a.localeCompare(b));
+      tootajad.sort((a, b) => a.nimi.localeCompare(b));
       muudaTootajad(tootajad.slice());
 
       }
       const sorteeriKahanevalt = () => {
-        tootajad.sort((a, b) => b.length - a.length);
+        tootajad.sort((a, b) => b.nimi.length - a.nimi.length);
         muudaTootajad(tootajad.slice());
       }
   
@@ -46,11 +47,11 @@ function Tootajad() {
 
   }
   const filtreeriRoh5Tahelised = () => {
-    const vastus = tootajadJSON.filter(tootaja => tootaja.length === 5 );
+    const vastus = tootajadJSON.filter(tootaja => tootaja.nimi.length === 5 );
     muudaTootajad(vastus)
   }
   const filtreeriAlgavadM = () => {
-    const vastus = tootajadJSON.filter(tootaja => tootaja[0] === "M")
+    const vastus = tootajadJSON.filter(tootaja => tootaja.nimi[0] === "M")
     muudaTootajad(vastus);
   }
   
@@ -60,7 +61,7 @@ function Tootajad() {
   }
   const arvutaKokku = () => {
     let summa = 0; //=> summa += keskus.lenght... ---> liida vanale summale
-    tootajad.forEach(tootaja => summa =  summa + tootaja.length);
+    tootajad.forEach(tootaja => summa =  summa + tootaja.nimi.length);
   return summa;
   }
   
@@ -85,10 +86,17 @@ function Tootajad() {
       <br /><br />
       
       {tootajad.map((tootaja, index) => 
+
+      <div> 
+        {tootaja.nimi}:
+        {tootaja.tel}:
+        {tootaja.amet}: 
+        {tootaja.email}:
       <Link to={"/tootaja/" + index}>
         <button>{tootaja}</button>
       </Link>
-       )}
+      </div>)}
+
     </div>
   )
 }

@@ -17,8 +17,8 @@ function HaldaTootajad() {
   const [tootajad, muudaTootajad] = useState (tootajadJSON.slice());
   const tootajaRef = useRef();
  
-  const kustutaEsimene = () =>{
-    tootajadJSON.splice(0,1);
+  const kustutaEsimene = (index) =>{
+    tootajadJSON.splice(index,1);
     muudaTootajad(tootajadJSON.slice());
   
 }

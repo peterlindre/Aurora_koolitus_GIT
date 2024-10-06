@@ -8,6 +8,7 @@ function YksToode() {
   const leitud = tootedFailist[index];
   return (
 
+    
 
     <div>
       <div>Järjekorranumber:{index}</div>

@@ -5,6 +5,7 @@
 // Testimiseks: kustutage 1 element ja vaadake "Tootajad.js" või "Toode.js"
 //            lehelt, kas ta kustus
 
+
 // YksTootaja TEHTUD
 // YksToode TEHTUD
 // MuudaTootaja TEHTUD
