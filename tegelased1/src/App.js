@@ -1,17 +1,15 @@
-
+// import logo from './logo.svg';
 import './App.css';
-import {Link, Route, Routes} from "react-router-dom"
-import Avaleht from '../../tegelased1/src/pages/Avaleht';
-import LisaTegelane from '../../tegelased1/src/pages/LisaTegelane';
-import ValitudTegelased from '../../tegelased1/src/pages/ValitudTegelased';
-
+import{Link, Route, Routes} from "react-router-dom";
+import Avaleht from './pages/Avaleht';
+import LisaTegelane from './pages/LisaTegelane';
+import ValitudTegelased from './pages/ValitudTegelased';
 
 
 function App() {
   return (
     <div className="App">
-
-    <Link to="/">
+      <Link to="/">
       <button>Avalehele</button>
     </Link>
     <Link to= "/lisa-tegelane">

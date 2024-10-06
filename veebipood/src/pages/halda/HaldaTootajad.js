@@ -15,29 +15,29 @@ import { Link } from 'react-router-dom';
 
 function HaldaTootajad() {
   const [tootajad, muudaTootajad] = useState (tootajadJSON.slice());
-  const tootajaRef = useRef();
+  // const tootajaRef = useRef();
  
-  const kustutaEsimene = (index) =>{
-    tootajadJSON.splice(index,1);
-    muudaTootajad(tootajadJSON.slice());
+//   const kustutaEsimene = (index) =>{
+//     tootajadJSON.splice(index,1);
+//     muudaTootajad(tootajadJSON.slice());
   
-}
-const kustutaTeine = () =>{
-  tootajadJSON.splice(1,1);
-  muudaTootajad(tootajadJSON.slice());
-}
-  const kustutaKolmas = () =>{
-    tootajadJSON.splice(2,1);
-    muudaTootajad(tootajadJSON.slice());
-}
-    const kustutaNeljas = () =>{
-      tootajadJSON.splice(3,1);
-      muudaTootajad(tootajadJSON.slice());
-}
-const lisa = () => {
-tootajadJSON.push(tootajaRef.current.value);
-muudaTootajad(tootajadJSON.slice());
-}
+// }
+// const kustutaTeine = () =>{
+//   tootajadJSON.splice(1,1);
+//   muudaTootajad(tootajadJSON.slice());
+// }
+//   const kustutaKolmas = () =>{
+//     tootajadJSON.splice(2,1);
+//     muudaTootajad(tootajadJSON.slice());
+// }
+//     const kustutaNeljas = () =>{
+//       tootajadJSON.splice(3,1);
+//       muudaTootajad(tootajadJSON.slice());
+// }
+// const lisa = () => {
+// tootajadJSON.push(tootajaRef.current.value);
+// muudaTootajad(tootajadJSON.slice());
+// }
 const kustuta = (index) => {
 tootajadJSON.splice(index,1);
 muudaTootajad(tootajadJSON.slice());
@@ -46,7 +46,7 @@ muudaTootajad(tootajadJSON.slice());
   return (
 
     <div>
-       <br />
+       {/* <br />
       <button onClick={kustutaEsimene}>Kustuta esimene</button>
       <button onClick={kustutaTeine}>Kustuta teine</button>
       <button onClick={kustutaKolmas}>Kustuta kolmas</button>
@@ -56,9 +56,16 @@ muudaTootajad(tootajadJSON.slice());
        <input ref={tootajaRef} type="text" />
       <button onClick={lisa}>Lisa</button><br /> 
       <br />
+       */}
       {tootajad.map((tootaja, index) => 
       <div>
-        <div>{tootaja}</div>
+        <div>{tootaja.nimi}</div>
+        <div>{tootaja.tel}</div>
+        <div>{tootaja.amet}</div>
+        <div>{tootaja.email}</div>
+
+
+
       <button onClick={() => kustuta(index)}>X</button>
       <Link to={"/muuda-tootaja/" + index} >
         <button>Muuda</button>

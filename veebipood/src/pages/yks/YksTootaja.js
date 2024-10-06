@@ -14,7 +14,7 @@ const leitud = tootajadJSON[index];
       <div>Töötaja telefon: {leitud.tel}</div>
       <div>Töötaja amet: {leitud.amet}</div>
       <div>Töötaja email: {leitud.email}</div>
-      {false && <div>Töötaja puudub </div>}
+      {leitud.aktiivne === false && <div>Töötaja puudub </div>}
     </div>
   ) 
 }

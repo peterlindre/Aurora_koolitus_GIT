@@ -14,7 +14,7 @@ const emailRef = useRef();
 const muuda = () => {
   tootajadJSON[index] = {
     "nimi": nimiRef.current.value, 
-    "telefon": telRef.current.value, 
+    "tel": telRef.current.value, 
     "amet": ametRef.current.value, 
     "email": emailRef.current.value,
   }  ;
@@ -24,7 +24,7 @@ return (
       <label>Töötaja</label> <br />
       <input type="text" ref={nimiRef} defaultValue={leitud.nimi} /> <br />
       <label>Telefon</label> <br />
-      <input type="text" ref={telRef} defaultValue={leitud.telefon} /> <br />
+      <input type="text" ref={telRef} defaultValue={leitud.tel} /> <br />
       <label>Amet</label> <br />
       <input type="text" ref={ametRef} defaultValue={leitud.amet} /> <br />
       <label>Email</label> <br />

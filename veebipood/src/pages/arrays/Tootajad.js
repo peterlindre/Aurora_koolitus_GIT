@@ -37,11 +37,11 @@ function Tootajad() {
       }
   
   const sorteeriAZ = () => {
-    tootajad.sort();
+    tootajad.sort((a,b) => a.nimi.localeCompare(b.nimi));
     muudaTootajad(tootajad.slice());
   }
   const sorteeriZA = () => {
-    tootajad.sort();
+    tootajad.sort((a,b) => b.nimi.localeCompare(a.nimi));
     tootajad.reverse();
     muudaTootajad(tootajad.slice());
 
@@ -56,7 +56,7 @@ function Tootajad() {
   }
   
   const otsing = () => {
-    const vastus = tootajadJSON.filter(tootaja => String(tootaja).includes(otsingRef.current.value) );
+    const vastus = tootajadJSON.filter(tootaja => tootaja.nimi.includes(otsingRef.current.value) );
     muudaTootajad(vastus);
   }
   const arvutaKokku = () => {
@@ -89,12 +89,17 @@ function Tootajad() {
 
       <div> 
         {tootaja.nimi}:
+        <br />
         {tootaja.tel}:
+        <br />
         {tootaja.amet}: 
+        <br />
         {tootaja.email}:
+        <br />
       <Link to={"/tootaja/" + index}>
-        <button>{tootaja}</button>
+        <button>{tootaja.nimi}</button>
       </Link>
+      <br />
       </div>)}
 
     </div>
