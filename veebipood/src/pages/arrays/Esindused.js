@@ -109,7 +109,7 @@ return summa;
         <button onClick={filtreeriKolmasTahtI}>Filtreeri kellel on neljas täht 's'</button>
         <br />
           {keskused.map((keskus, index) =>   
-            <div>
+            <div key={index}>
               
               {keskus.nimi}:
               {keskus.tel}

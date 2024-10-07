@@ -15,7 +15,7 @@ import LogiSisse from './pages/useRef/LogiSisse';
 import Registreeru from './pages/useRef/Registreeru';
 
 
-import Meny from './components/Meny';
+// import Meny from './components/Meny';
 import Hinnad from './pages/arrays/Hinnad';
 import Tooted from './pages/arrays/Tooted';
 import Tootajad from './pages/arrays/Tootajad';
@@ -36,14 +36,15 @@ import MuudaTootaja from './pages/muuda/MuudaTootaja';
 import { ContactUs } from './pages/useRef/ContactUs';
 import Admin from './pages/useState/Admin';
 import Shops from './pages/useState/Shops';
+import Menu from './components/Menu';
 
 
 function App() {
   return (
     <div className="App">
  
-
-     <Meny /> 
+    <Menu />
+     {/* <Meny />  */}
       
     
       <Routes>
@@ -70,7 +71,7 @@ function App() {
        
         <Route path='esindus/:index' element={ <YksEsindus/>} />
         <Route path='hind/:index' element={ <YksHind/>} />
-        <Route path='toode/:index' element={ <YksToode/>} />
+        <Route path='toode/:tooteNimi' element={ <YksToode/>} />
         <Route path='tootaja/:index' element={ <YksTootaja/>} />
 
         <Route path='muuda-esindus/:index' element={ <MuudaEsindus/>} />

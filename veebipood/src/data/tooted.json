@@ -1,9 +1,9 @@
 [
-  {"nimi": "Nobe", "hind": 25000, "aktiivne": true, "keskus":"Ülemiste", "pilt": "https.// .jpg vms l6puga"},
-  {"nimi": "BMW", "hind": 55000, "aktiivne": true, "keskus":"Vesse", "pilt": "https.// .jpg vms l6puga"},
-  {"nimi": "Tesla", "hind": 45000, "aktiivne": false, "keskus":"Kristiine", "pilt": "https.// .jpg vms l6puga"},
-  {"nimi": "Bentley", "hind": 232000, "aktiivne": true, "keskus":"Järveotsa", "pilt": "https.// .jpg vms l6puga"},
-  {"nimi": "Toyota", "hind": 25300, "aktiivne": false, "keskus":"Kristiine", "pilt": "https.// .jpg vms l6puga"},
-  {"nimi": "Nissan", "hind": 21400, "aktiivne": true, "keskus":"Ülemiste", "pilt": "https.// .jpg vms l6puga"}  
+  {"nimi": "Nobe", "hind": 25000, "aktiivne": true, "keskus":"Ülemiste", "pilt": "https://i0.wp.com/eestinen.fi/wp-content/uploads/2019/07/nobe.jpg?ssl=1"},
+  {"nimi": "BMW", "hind": 55000, "aktiivne": true, "keskus":"Vesse", "pilt": "https://www.bmw-m.com/content/dam/bmw/marketBMW_M/www_bmw-m_com/all-models/model-navigation/bmw-m850i-xdrive-cabrio-flyout-neu.png"},
+  {"nimi": "Tesla", "hind": 45000, "aktiivne": false, "keskus":"Kristiine", "pilt": "https://www.shutterstock.com/image-illustration/electric-car-3d-rendering-isolated-260nw-678961774.jpg"},
+  {"nimi": "Bentley", "hind": 232000, "aktiivne": true, "keskus":"Järveotsa", "pilt": "https://www.topgear.com/sites/default/files/images/cars-road-test/carousel/2020/10/229300ef4c07ec76beb94d88d0a51b5c/rp_-_mulliner-4.jpg"},
+  {"nimi": "Toyota", "hind": 25300, "aktiivne": false, "keskus":"Kristiine", "pilt": "https://toyotagazooracing.com/-/media/TMC/tgr/global/contents/pressrelease/images/2024/0802-01/0802-01_01.jpg"},
+  {"nimi": "Nissan", "hind": 21400, "aktiivne": true, "keskus":"Ülemiste", "pilt": "https://www.nissanusa.com/content/dam/Nissan/us/experience_nissan/newsevents/skyline-to-gt-r/2024-nissan-gtr-special-edition.jpg.ximg.l_6_m.smart.jpg"}  
  
 ]

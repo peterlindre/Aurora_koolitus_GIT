@@ -3,6 +3,7 @@ import tootedJSON from "../../data/tooted.json"
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ostukorvJSON from "../../data/ostukorv.json";
+import Button from '@mui/material/Button';
 // import Hinnad from './Hinnad';
 
 
@@ -71,30 +72,34 @@ function Tooted() {
        <div>Toodete nimetähtede arv kokku: {arvutaKokku()} tk</div>
       <input ref={otsingRef} onChange={otsi} type="text" />
       
-
+      {/* <Button variant="text">Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button> */}
 
 <br />
-      <button onClick={reset}>Reset</button>
+      <Button onClick={reset}variant="outlined">Reset</Button>
       <br /><br />
-      <button onClick={sorteeriKasvavalt}>Sorteeri kasvavalt</button>
-      <button onClick={sorteeriKahanevalt}>Sorteeri kahanevalt</button>
-      <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
-      <button onClick={sorteeriZA}>Sorteeri Z-A</button>
-      <button onClick={filtreeriAlgavadB}>Filtreeri B tähega algavad</button>
-      <button onClick={filtreeriAlgavadN}>Filtreeri N tähega algavad</button>
-      <button onClick={filtreeriAlgavadT}>Filtreeri T tähega algavad</button>
+      <Button onClick={sorteeriKasvavalt}variant="text">Sorteeri kasvavalt</Button>
+      <Button onClick={sorteeriKahanevalt}variant="text">Sorteeri kahanevalt</Button>
+      <Button onClick={sorteeriAZ}variant="text">Sorteeri A-Z</Button>
+      <Button onClick={sorteeriZA}variant="text">Sorteeri Z-A</Button>
+      <Button onClick={filtreeriAlgavadB}variant="text">Filtreeri B tähega algavad</Button>
+      <Button onClick={filtreeriAlgavadN}variant="contained">Filtreeri N tähega algavad</Button>
+      <Button onClick={filtreeriAlgavadT}variant="contained">Filtreeri T tähega algavad</Button>
       
       <br /><br />
       
       <br /><br />
      
       {tooted.map((toode, index) => 
-       <div>
+
+       <div key={index}>
+        <img  className={toode.aktiivne === true ? "pilt": "pilt-mitteaktiivne"} src={toode.pilt} alt="" />
         {toode.nimi} - {toode.hind}€
-      <Link to={"/toode/" + index}>
+      <Link to={"/toode/" + toode.nimi}>
         <button>Vt lähemalt</button>
       </Link>
-      <button onClick={() => lisaOstukorvi(toode)}>Lisa ostukorvi</button>
+      {toode.aktiivne === true &&< button onClick={() => lisaOstukorvi(toode)}>Lisa ostukorvi</button> }
         </div>
         )}
     </div>

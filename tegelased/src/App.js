@@ -1,9 +1,9 @@
 
 import './App.css';
 import {Link, Route, Routes} from "react-router-dom"
-import Avaleht from '../../tegelased1/src/pages/Avaleht';
-import LisaTegelane from '../../tegelased1/src/pages/LisaTegelane';
-import ValitudTegelased from '../../tegelased1/src/pages/ValitudTegelased';
+import Avaleht from './pages/Avaleht';
+import LisaTegelane from './pages/LisaTegelane';
+import ValitudTegelased from './pages/ValitudTegelased';
 
 
 

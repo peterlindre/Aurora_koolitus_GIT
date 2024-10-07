@@ -76,7 +76,7 @@ const kustuta = (nr) => {
       <button onClick={lisaSaue}>Lisa Saue</button>
       <button onClick={lisaSaku}>Lisa Saku</button>
       {keskused.map((keskus, jrknr) => 
-        <div>
+        <div key={jrknr}>
           {keskus.nimi} <br />
           {keskus.tel} <br />
           {keskus.aadr} <br />
