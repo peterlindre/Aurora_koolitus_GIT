@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import cartJSON from "../../data/cart.json"
+import CloseButton from 'react-bootstrap/CloseButton';
 
 
 function Cart() {
@@ -22,6 +23,17 @@ function Cart() {
     product.forEach(product => summa = summa + product.price);
     return summa;
   }
+  const aggregatedItems = product.reduce((acc, { id, quantity }) => {
+    if (!acc[id]) {
+        acc[id] = { id, quantity: 0 };
+    }
+    acc[id].quantity += quantity;
+    return acc;
+}, {});
+
+  function BasicExample() {
+    return <CloseButton />;
+  }
   return (
     <div>
       
@@ -32,8 +44,9 @@ function Cart() {
       {product.map((product, index) =>  
         <div key={index}>
           {index}
-          {product.nimi} - {product.hind}€
-          <button onClick={() => remove(index)} >x</button> 
+          {product.title} <br /> <img src={product.image} alt={product.title} style={{ width: '40px', height: 'auto' }} /> {product.price}€ <br /> 
+           
+          <button onClick={() => remove(index)} > <CloseButton/> </button> 
         </div>)}
         { product.length === 0 &&
        <>
@@ -42,7 +55,7 @@ function Cart() {
       </>}
 
 
-        {product.length > 0 && <div>Summa: {addAll()}€ </div>}
+        {product.length > 0 && <div>Amount: {addAll()}€ </div>}
     </div>
 
   )
