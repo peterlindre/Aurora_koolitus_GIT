@@ -37,12 +37,26 @@ import { ContactUs } from './pages/useRef/ContactUs';
 import Admin from './pages/useState/Admin';
 import Shops from './pages/useState/Shops';
 import Menu from './components/Menu';
+import { useState } from 'react';
 
 
 function App() {
+  // igalpool kus useState kasutad kasuda "set" muutujat.
+const [darkMode, setDarkMode] = useState (localStorage.getItem("darkTheme"));
+
+const darkThemeTrue = () => {
+  setDarkMode("true")
+  localStorage.setItem("darkTheme","true");
+}
+const darkThemeFalse = () => {
+  setDarkMode("false")
+  localStorage.setItem("darkTheme","false");
+}
+
   return (
-    <div className="App">
- 
+    <div className={darkMode === "true" ? "App-dark" : "App"}>
+ <button onClick={darkThemeTrue}>Dark</button>
+ <button onClick={darkThemeFalse}>Light</button>
     <Menu />
      {/* <Meny />  */}
       

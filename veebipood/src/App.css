@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+.App-dark{
+  text-align: center;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  /* vh --> view height ehk ekraani k6rgus */
+}
 .nupp {
   font-weight: bold;
   border-color: blue;

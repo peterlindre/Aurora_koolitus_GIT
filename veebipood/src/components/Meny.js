@@ -7,6 +7,8 @@ function Meny() {
 
   
   // return <h1>{t('Welcome to React')}</h1>
+  
+
 
   return (
     <div>

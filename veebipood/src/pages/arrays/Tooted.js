@@ -63,8 +63,18 @@ function Tooted() {
   }
 
   const lisaOstukorvi = (lisatudToode) => {
-    ostukorvJSON.push(lisatudToode);
+    // ostukorvJSON.push(lisatudToode);
+   const ostukorvLS = JSON.parse(localStorage.getItem("ostukorv")) || [];
+   ostukorvLS.push(lisatudToode); 
+    localStorage.setItem("ostukorv", JSON.stringify(ostukorvLS) )
   }
+
+  // 1. V6tan localStoragest vana ostukorvi sisu (localstorage.getItem)
+  // 1.1 kui vana ostukorvi v6ttes on tyhjus, pean ytlema, et tyhi array tuleks ( || [] )
+  // 2. V6tan jutum2rgid 2ra (JSON.parse)
+  // 3. lisan toote juurde / kustutan toote (.push / .splice)
+  // 4. Lisan localstoragesse tagasi (localstorage.setItem)
+  // 5. Lisan ostukorvi sisule jutum2rgid tagasi (JSON.stringify)
   
   
   return (

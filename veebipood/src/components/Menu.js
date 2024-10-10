@@ -8,6 +8,17 @@ import { Link } from 'react-router-dom';
 
 function Menu() {
   const { t, i18n } = useTranslation();
+
+  const changeLangEn = () => {
+    i18n.changeLanguage("en")
+    localStorage.setItem("keel","en");
+    // alati kui .setItem, peab kuskil olema ka .getItem
+  }
+
+  const changeLangEe = () => {
+    i18n.changeLanguage("et");
+    localStorage.setItem("keel","et");
+  }
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
@@ -29,8 +40,8 @@ function Menu() {
             <Nav.Link as={Link} to="/ostukorv">Ostukorv</Nav.Link>
             <Nav.Link as={Link} to="/logi-sisse"> Logi sisse </Nav.Link>
             <Nav.Link as={Link} to="/registreeru"> Registreeru </Nav.Link>
-            <button onClick={() => i18n.changeLanguage("en")}>EN</button>
-            <button onClick={() => i18n.changeLanguage("et")}>EE</button>
+            <button onClick={changeLangEn}>EN</button>
+            <button onClick={changeLangEe}>EE</button>
           </Nav>
         </Navbar.Collapse>
       </Container>
