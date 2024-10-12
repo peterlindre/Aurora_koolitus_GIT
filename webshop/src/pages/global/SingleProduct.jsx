@@ -30,3 +30,4 @@ if (found === undefined) {
 }
 
 export default SingleProduct
+

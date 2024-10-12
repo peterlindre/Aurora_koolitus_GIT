@@ -36,4 +36,8 @@
     transform: rotate(360deg);
   }
 }
+.map {
+  height: 400px; /* Set the height you want */
+  width: 100%; /* Set the width you want */
+}
 

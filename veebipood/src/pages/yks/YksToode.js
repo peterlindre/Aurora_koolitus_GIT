@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import tootedFailist from "../../data/tooted.json";
 
 
+
 function YksToode() {
   // useparams --> tema loogeliste sulgude sees olev nimi 
   //               peab olema sama, mis app.js sees ":" jargi kirjutatu

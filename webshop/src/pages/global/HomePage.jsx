@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 import productsFromFile from "../../data/products.json";
 import cartJSON from "../../data/cart.json";
 import Button from 'react-bootstrap/Button';
@@ -53,6 +54,17 @@ function HomePage() {
         const filteredProducts = productsFromFile.filter(product => product.category.includes ("women's clothing"));
       setProducts(filteredProducts);
       }
+           // Sorting by Rating Ascending
+    const sortRatingAscending = () => {
+      products.sort((a, b) => a.rating.rate - b.rating.rate);
+      setProducts(products.slice());
+    }
+  
+    // Sorting by Rating Descending
+      const sortRatingDescending = () => {
+      products.sort((a, b) => b.rating.rate - a.rating.rate);
+      setProducts(products.slice());
+    }
  
 
   return (
@@ -65,6 +77,8 @@ function HomePage() {
       <Button onClick={sortZA}>Sort Z-A</Button>
       <Button onClick={sortAscendingPrice}>Price ascending</Button>
       <Button onClick={sortDecendingPrice}>Price decending</Button>
+      <Button onClick={sortRatingAscending}>Rating ascending</Button>
+      <Button onClick={sortRatingDescending}>Rating descending</Button>
      
       <DropdownButton as={ButtonGroup} title="Select Category" id="category-dropdown">
         <Dropdown.Item onClick={filterMensClothing} >Men's clothing</Dropdown.Item>
@@ -78,14 +92,26 @@ function HomePage() {
 
 
       {products.map(product =>
+      
         <div key={product.id}>
           <img style={{width:"100px"}} src={product.image} alt="" />
           <div>{product.title}</div>
           <div>{product.price}€</div>
-          {< button onClick={() => addToCart(product)}>Add to cart</button> }
+          { < button onClick={() => addToCart(product)}>Add to cart</button> }
+
+          { 
+            <Link to={"/product/" + product.title}>
+               <button>Inspect</button>
+            </Link>
+          }
           </div>
 
+
+
+
+
       )}
+     
         <ToastContainer
            position="top-right"
            autoClose={2000}
