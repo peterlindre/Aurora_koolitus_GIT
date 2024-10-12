@@ -54,6 +54,7 @@ const logiValja = () => {
       <Link to="/seaded"> 
       <button>Seadetesse</button>
       </Link>
+      
 
       <Routes>
         <Route path="" element={<Avaleht />} />

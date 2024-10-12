@@ -26,7 +26,7 @@ setProduct(value);
           <th>Picture</th>
           <th>Name</th>
           <th>Price</th>
-          {/* <th>Rating</th> */}
+          <th>Rating</th> 
         </tr>
         </thead>
         <tbody>
@@ -35,6 +35,7 @@ setProduct(value);
             <td> <img style={{"width" : "50px"}} src={product.image} alt="" /></td>
             <td>{product.title}</td>
             <td>{product.price}</td>
+            <td>{product.rating.rate}</td>
             {/* <td>{product.rate}</td> */}
             <button onClick={() => empty(index)}>X</button>
         

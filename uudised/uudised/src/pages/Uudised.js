@@ -1,8 +1,18 @@
+import { Link } from "react-router-dom";
+
 function Uudised() {
+const uudised = JSON.parse(localStorage.getItem("uudised")) || [];
+
   return ( <div>
     <br />
     <br />
     <br />
+
+    <div>{uudised.map(uudis=> 
+    <Link to="uudis">
+      <div>{uudis}</div>
+      </Link>
+      )}</div>
 <div>
 <a target='_blank' rel="noreferrer" href="https://majandus.postimees.ee/8089669/perefirma-kaebas-eesti-kutuseturu-parast-euroopa-komisjonile"> Perefirma kaebas Eesti kütuseturu pärast Euroopa komisjonile</a>
     <br />
