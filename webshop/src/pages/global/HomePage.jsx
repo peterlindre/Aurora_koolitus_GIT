@@ -100,7 +100,7 @@ function HomePage() {
           { < button onClick={() => addToCart(product)}>Add to cart</button> }
 
           { 
-            <Link to={"/product/" + product.title}>
+            <Link to={"/product/" + product.title.replaceAll("/", "").replaceAll(" ", "-").replaceAll("/", "").replaceAll(" ", "-").toLowerCase()}>
                <button>Inspect</button>
             </Link>
           }

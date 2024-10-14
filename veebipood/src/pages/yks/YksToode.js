@@ -10,7 +10,7 @@ function YksToode() {
   // KUI: path='toode/:tere'
   // SIIS: const(tere) = userparams();
   const {tooteNimi} = useParams();
-  const leitud = tootedFailist.find(toode => toode.nimi === tooteNimi);
+  const leitud = tootedFailist.find(toode => toode.nimi.replaceAll("/", "").replaceAll(" ", "-").toLowerCase() === tooteNimi);
 
 // index (jarjekorranumbri) jargi leidmiseks:
 // const leitud = toodeFailist[index];

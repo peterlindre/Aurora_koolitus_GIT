@@ -16,7 +16,6 @@ function NavigationBar() {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/shops">Shops</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-            <Nav.Link as={Link} to="/product/:index" >Product</Nav.Link>
             <Nav.Link as={Link} to="/cart" >Cart</Nav.Link>
             <NavDropdown title="Admin" id="basic-nav-dropdown">
             <NavDropdown.Item as={Link} to="admin/add-product">Add product</NavDropdown.Item>

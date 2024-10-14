@@ -106,7 +106,7 @@ function Tooted() {
        <div key={index}>
         <img  className={toode.aktiivne === true ? "pilt": "pilt-mitteaktiivne"} src={toode.pilt} alt="" />
         {toode.nimi} - {toode.hind}€
-      <Link to={"/toode/" + toode.nimi}>
+      <Link to={"/toode/" + toode.nimi.replaceAll("/", "").replaceAll(" ", "-").toLowerCase()}>
         <button>Vt lähemalt</button>
       </Link>
       {toode.aktiivne === true &&< button onClick={() => lisaOstukorvi(toode)}>Lisa ostukorvi</button> }

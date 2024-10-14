@@ -4,7 +4,7 @@ import productJSON from '../../data/products.json';
 
 function SingleProduct() {
   const {productName} = useParams();
-  const found = productJSON.find(product => product.title === productName);
+  const found = productJSON.find(product => product.title.replaceAll("/", "").replaceAll(" ", "-").toLowerCase() === productName);
 
 
 if (found === undefined) {
@@ -20,7 +20,7 @@ if (found === undefined) {
       <div>Product description: {found.description}</div>
       <div>Product category: {found.category}</div>
       <div>Product image: {found.image}</div>
-      <div>Product rating: {found.rating}</div>
+      <div>Product rating: {found.rate}</div>
     
 
 
