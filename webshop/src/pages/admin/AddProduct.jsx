@@ -28,12 +28,12 @@ const [message, setMessage] = useState("Add new product!")
   setMessage ("Product added: " + titleRef.current.value)
   const addedProduct = {
     "id" : Number(idRef.current.value),
-    "Name" : titleRef.current.value,
-    "Price": Number(priceRef.current.value),
-    "Description" : descriptionRef.current.value,
-    "Category" : categoryRef.current.value,
-    "Image": imageRef.current.value,
-    "Rating": Number(ratingRef.current.value)
+    "title" : titleRef.current.value,
+    "price": Number(priceRef.current.value),
+    "description" : descriptionRef.current.value,
+    "category" : categoryRef.current.value,
+    "image": imageRef.current.value,
+    "rating": Number(ratingRef.current.value)
 
   }
   productJSON.push(addedProduct);

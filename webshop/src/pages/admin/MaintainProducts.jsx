@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'material-react-toastify';
 
 function MaintainProducts() {
-const [product, setProduct] = useState (productJSON.slice());
+const [products, setProducts] = useState (productJSON.slice());
 const searchRef = useRef () ;
 
 const empty = (index) => {
   productJSON.splice(index,1);
-  setProduct(productJSON.slice());
+  setProducts(productJSON.slice());
   toast.success("Item removed");
 }
 const search = () => {
   const value = productJSON.filter(index => index.title.includes(searchRef.current.value));
-setProduct(value);
+setProducts(value);
 }
 
   return (
@@ -30,15 +30,18 @@ setProduct(value);
         </tr>
         </thead>
         <tbody>
-          {product.map((product, index) => 
-          <tr key={index}>
+          {products.map((product, index) => 
+          <tr key={index} className={product.active === true ? "active" : "inactive"}>
             <td> <img style={{"width" : "50px"}} src={product.image} alt="" /></td>
             <td>{product.title}</td>
             <td>{product.price}</td>
             <td>{product.rating.rate}</td>
             {/* <td>{product.rate}</td> */}
             <button onClick={() => empty(index)}>X</button>
-        
+            <Link to={"/admin/edit-product/"+ index}>  
+              <button>Change</button>
+            </Link>
+          
           </tr>
           )}
         </tbody>

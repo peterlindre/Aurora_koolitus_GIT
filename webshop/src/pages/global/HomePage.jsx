@@ -39,11 +39,11 @@ function HomePage() {
       }
 
       const filterElectronics = () => {
-        const filteredProducts = productsFromFile.filter(product => product.category.includes ("electronics"));
+        const filteredProducts = productsFromFile.filter(product => product.category === "electronics");
       setProducts(filteredProducts);
       }
       const filterJewelery = () => {
-        const filteredProducts = productsFromFile.filter(product => product.category.includes ("jewelery"));
+        const filteredProducts = productsFromFile.filter(product => product.category === "jewelery");
       setProducts(filteredProducts);
       }
       const filterMensClothing = () => {
@@ -51,7 +51,7 @@ function HomePage() {
       setProducts(filteredProducts);
       }
       const filterWomensClothing = () => {
-        const filteredProducts = productsFromFile.filter(product => product.category.includes ("women's clothing"));
+        const filteredProducts = productsFromFile.filter(product => product.category === "women's clothing");
       setProducts(filteredProducts);
       }
            // Sorting by Rating Ascending

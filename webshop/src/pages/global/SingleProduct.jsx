@@ -20,7 +20,7 @@ if (found === undefined) {
       <div>Product description: {found.description}</div>
       <div>Product category: {found.category}</div>
       <div>Product image: {found.image}</div>
-      <div>Product rating: {found.rate}</div>
+      <div>Product rating: {found.rating.rate}</div>
     
 
 

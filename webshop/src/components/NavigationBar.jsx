@@ -23,7 +23,9 @@ function NavigationBar() {
             <NavDropdown.Item as={Link} to="admin/maintain-products">Maintain products</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="admin/maintain-categories">Maintain categories</NavDropdown.Item>
             <NavDropdown.Item as={Link} to="admin/maintain-shops"> Maintain shops </NavDropdown.Item>
-            
+            <NavDropdown.Item as={Link} to="admin/supplier"> Supplier </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="admin/electricity"> Electricity </NavDropdown.Item>           
+
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
