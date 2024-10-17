@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import cartJSON from "../../data/cart.json"
 import CloseButton from 'react-bootstrap/CloseButton';
 import ParcelMachines from '../../components/ParcelMachines';
-
+import Payment from '../../components/Payments'
 
 function Cart() {
   const [products, changeProducts] = useState (cartJSON.slice());
@@ -52,6 +52,8 @@ function Cart() {
         <div>
           <ParcelMachines/>
           Amount: {addAll()}€ </div>}
+
+          <Payment />
     </div>
 
   )

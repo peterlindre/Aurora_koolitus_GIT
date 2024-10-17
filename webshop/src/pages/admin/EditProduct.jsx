@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom';
-import productsFromFile from "../../data/products.json";
+// import productsFromFile from "../../data/products.json";
 import { useRef } from 'react';
 
 function EditProduct() {
 const { index } = useParams();
-const found = productsFromFile[index];
-
+const [products, setProducts] = useState([]);
+const found = products[index];
   const idRef = useRef ();
   const titleRef = useRef ();
   const priceRef = useRef ();
@@ -15,11 +15,23 @@ const found = productsFromFile[index];
   const imageRef = useRef ();
   const ratingRef = useRef ();
   const activeRef = useRef();
-  const countRef = useRef();
+  const countRef = useRef(); 
+  const url = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+  
+
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(json => setProducts(json || []))
+    
+    },[]);
+
+
 
   const add = () => {
-    productsFromFile[index] = {
-      "id": idRef.current.value,
+    products[index] = {
+      "id": Number(idRef.current.value),
       "title": titleRef.current.value,
       "price":  Number(priceRef.current.value),
       "descripton": descriptionRef.current.value,
@@ -30,6 +42,11 @@ const found = productsFromFile[index];
         "count": Number(countRef.current.value)
       }
     }
+    fetch(url, {method: "PUT", body: JSON.stringify(products)});
+  }
+
+  if (found === undefined) {
+    return <div>Product not found!</div>
   }
 
   return (
@@ -39,7 +56,7 @@ const found = productsFromFile[index];
       <label>ID:</label> <br />
       <input ref={idRef} defaultValue={found.id} type="text" /> <br />
       <label>Active:</label> <br />
-      <input ref={activeRef} defaultValue={found.active}  type="number" /> <br />
+      <input ref={activeRef} defaultValue={found.active}  type="checkbox" /> <br />
       <label>Image:</label> <br />
       <input ref={imageRef}  defaultValue={found.image} type="text" /> <br />
       <label>Description:</label> <br />
@@ -47,10 +64,10 @@ const found = productsFromFile[index];
       <label>Price:</label> <br />
       <input ref={priceRef} defaultValue={found.price}  type="number" /> <br />
       <label>Rating:</label> <br />
-      <input ref={ratingRef}  defaultValue={found.rating} type="text" /> <br />
-      <label>Category:</label> <br />
-      <input ref={countRef} defaultValue={found.count}  type="number" /> <br />
+      <input ref={ratingRef}  defaultValue={found.rating} type="number" /> <br />
       <label>Count:</label> <br />
+      <input ref={countRef} defaultValue={found.count}  type="number" /> <br />
+      <label>Category:</label> <br />
       <input ref={categoryRef} defaultValue={found.category} type="text" /> <br />
         <button onClick={add}>Add</button> 
 

@@ -1,19 +1,30 @@
-import React, {useRef, useState} from 'react'
-import productJSON from "../../data/products.json"
+import React, {useEffect, useRef, useState} from 'react'
+// import productJSON from "../../data/products.json"
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'material-react-toastify';
 
 function MaintainProducts() {
-const [products, setProducts] = useState (productJSON.slice());
+const [products, setProducts] = useState ([]);
 const searchRef = useRef () ;
+const url = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/products.json";
 
-const empty = (index) => {
-  productJSON.splice(index,1);
-  setProducts(productJSON.slice());
+
+useEffect(() => {
+  fetch(url)
+    .then(res => res.json())
+    .then(json => setProducts(json || []))
+  
+  },[]);
+
+
+const remove = (index) => {
+  products.splice(index,1);
+  setProducts(products.slice());
   toast.success("Item removed");
+  fetch(url, {method: "PUT", body: JSON.stringify(products)});
 }
 const search = () => {
-  const value = productJSON.filter(index => index.title.includes(searchRef.current.value));
+  const value = products.filter(index => index.title.includes(searchRef.current.value));
 setProducts(value);
 }
 
@@ -37,7 +48,7 @@ setProducts(value);
             <td>{product.price}</td>
             <td>{product.rating.rate}</td>
             {/* <td>{product.rate}</td> */}
-            <button onClick={() => empty(index)}>X</button>
+            <button onClick={() => remove(index)}>X</button>
             <Link to={"/admin/edit-product/"+ index}>  
               <button>Change</button>
             </Link>

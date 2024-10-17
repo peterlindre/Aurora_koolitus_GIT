@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
-import productsFromFile from "../../data/products.json";
+// import productsFromFile from "../../data/products.json";
 import cartJSON from "../../data/cart.json";
 import Button from 'react-bootstrap/Button';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -9,12 +9,23 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { ToastContainer, toast } from 'react-toastify';
 
-function HomePage() {
-  const [products, setProducts] = useState(productsFromFile);
 
-  const reset = () => {
-    setProducts (productsFromFile.slice());
-  }
+function HomePage() {
+  const [products, setProducts] = useState([]);
+
+
+  const url = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(json => setProducts(json || []))
+    
+    },[]);
+  // const reset = () => {
+  //   setProducts (productsFromFile.slice());
+  // }
 
   const addToCart = (addedProduct) => {
     cartJSON.push(addedProduct);
@@ -39,19 +50,19 @@ function HomePage() {
       }
 
       const filterElectronics = () => {
-        const filteredProducts = productsFromFile.filter(product => product.category === "electronics");
+        const filteredProducts = products.filter(product => product.category === "electronics");
       setProducts(filteredProducts);
       }
       const filterJewelery = () => {
-        const filteredProducts = productsFromFile.filter(product => product.category === "jewelery");
+        const filteredProducts = products.filter(product => product.category === "jewelery");
       setProducts(filteredProducts);
       }
       const filterMensClothing = () => {
-        const filteredProducts = productsFromFile.filter(product => product.category === "men's clothing" );
+        const filteredProducts = products.filter(product => product.category === "men's clothing" );
       setProducts(filteredProducts);
       }
       const filterWomensClothing = () => {
-        const filteredProducts = productsFromFile.filter(product => product.category === "women's clothing");
+        const filteredProducts = products.filter(product => product.category === "women's clothing");
       setProducts(filteredProducts);
       }
            // Sorting by Rating Ascending
@@ -65,6 +76,10 @@ function HomePage() {
       products.sort((a, b) => b.rating.rate - a.rating.rate);
       setProducts(products.slice());
     }
+
+    // if (product.length === 0) {
+    //   return 
+    // }
  
 
   return (

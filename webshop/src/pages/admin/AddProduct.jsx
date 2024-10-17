@@ -1,5 +1,5 @@
-import React, { useState,useRef } from 'react';
-import productJSON from '../../data/products.json';
+import React, { useState,useRef, useEffect } from 'react';
+// import productJSON from '../../data/products.json';
 
 // "id"
 // "title"
@@ -18,6 +18,16 @@ const [message, setMessage] = useState("Add new product!")
   const categoryRef = useRef ();
   const imageRef = useRef ();
   const ratingRef = useRef ();
+  const url = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(json => setProducts(json || []))
+    
+    },[]);
+
 
   function add(){
     if (titleRef.current.value === "") {
@@ -33,10 +43,14 @@ const [message, setMessage] = useState("Add new product!")
     "description" : descriptionRef.current.value,
     "category" : categoryRef.current.value,
     "image": imageRef.current.value,
-    "rating": Number(ratingRef.current.value)
-
+    "active": true, 
+    "rating":{
+      "rate": Number(ratingRef.current.value),
+      "count": 0,
+    }
   }
-  productJSON.push(addedProduct);
+  products.push(addedProduct);
+  fetch(url, {method: "PUT", body: JSON.stringify(products)});
   }
   const check = () => {
     if (titleRef.current.value === ""){
