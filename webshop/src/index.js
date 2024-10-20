@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'material-react-toastify/dist/ReactToastify.css';
 import 'leaflet/dist/leaflet.css';
 import './index.css';
+import './pages/i18n';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';

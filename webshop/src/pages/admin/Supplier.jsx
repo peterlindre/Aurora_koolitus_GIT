@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next';
 
 function Supplier() {
 const [products, setProducts] = useState([]);
@@ -13,6 +14,7 @@ useEffect(() => {
   .then(json => setProducts(json))
 }, []);
 
+const { t } = useTranslation();
 
 
   return (
@@ -20,10 +22,10 @@ useEffect(() => {
        <table>
         <thead>
         <tr> 
-          <th>Picture</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Rating</th> 
+          <th>{t("Picture")}</th>
+          <th>{t("Name")}</th>
+          <th>{t("Price")}</th>
+          <th>{t("Rating")}</th> 
         </tr>
         </thead>
         <tbody>

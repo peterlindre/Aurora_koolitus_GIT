@@ -1,4 +1,5 @@
 import React, { useState,useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 // import productJSON from '../../data/products.json';
 
 // "id"
@@ -11,6 +12,7 @@ import React, { useState,useRef, useEffect } from 'react';
 
 function AddProduct() {
 const [message, setMessage] = useState("Add new product!")
+const { t } = useTranslation();
   const idRef = useRef ();
   const titleRef = useRef ();
   const priceRef = useRef ();
@@ -64,21 +66,21 @@ const [message, setMessage] = useState("Add new product!")
     <div>
       <br />
     <div>{message}</div> <br />
-      <label htmlFor="Name">Product name:</label> <br />
+      <label htmlFor="Name">{t("Product name")}:</label> <br />
       <input onChange={check} ref={titleRef} id="nimi" type="text" /> <br />
       <label>ID:</label> <br />
       <input ref={idRef}  type="text" /> <br />
-      <label>Image:</label> <br />
+      <label>{t("Image")}:</label> <br />
       <input ref={imageRef}  type="text" /> <br />
-      <label>Description:</label> <br />
+      <label>{t("Description")}:</label> <br />
       <input ref={descriptionRef}  type="text" /> <br />
-      <label>Price:</label> <br />
+      <label>{t("Price")}:</label> <br />
       <input ref={priceRef}  type="number" /> <br />
-      <label>Rating:</label> <br />
+      <label>{t("Rating")}:</label> <br />
       <input ref={ratingRef}  type="text" /> <br />
-      <label>Category:</label> <br />
+      <label>{t("Category")}:</label> <br />
       <input ref={categoryRef}  type="text" /> <br />
-      <button onClick={add}>Add</button>
+      <button onClick={add}>{t("Add")}</button>
       
 
     </div>

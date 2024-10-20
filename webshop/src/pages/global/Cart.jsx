@@ -1,22 +1,32 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import cartJSON from "../../data/cart.json"
+// import cartJSON from "../../data/cart.json"
 import CloseButton from 'react-bootstrap/CloseButton';
 import ParcelMachines from '../../components/ParcelMachines';
 import Payment from '../../components/Payments'
+import { useTranslation } from 'react-i18next';
+
+
+
+
+ 
 
 function Cart() {
-  const [products, changeProducts] = useState (cartJSON.slice());
+  const { t } = useTranslation();
+  const [products, changeProducts] = useState (JSON.parse(localStorage.getItem("ostukorv")) || []);
+
+
 
   const empty = () => {
-    cartJSON.splice(0);
-    changeProducts(cartJSON.slice());
+    products.splice(0);
+    changeProducts(products.slice());
+    localStorage.setItem("cart", JSON.stringify(products));
   }
 
   const remove = (index) => {
-    cartJSON.splice(index,1);
-    changeProducts(cartJSON.slice());
-
+    products.splice(index,1);
+    changeProducts(products.slice());
+    localStorage.setItem("cart", JSON.stringify(products));
   }
   
   const addAll = () => {
@@ -29,9 +39,9 @@ function Cart() {
   return (
     <div>
       
-      {products.length > 0 && <button onClick={empty}>{"Clear all"}</button>}
+      {products.length > 0 && <button onClick={empty}>{t("Clear all")}</button>}
 
-      {products.length > 0 && <div>Items in cart: {products.length} pcs</div>}
+      {products.length > 0 && <div>{t("Items in cart")}: {products.length} {t("pcs")}</div>}
 
       {products.map((product, index) =>  
         <div key={index}>
@@ -42,8 +52,8 @@ function Cart() {
         </div>)}
         { products.length === 0 &&
        <>
-        <div>Cart is empty</div>
-        <div>Go back to <Link to="/">homepage</Link></div> 
+        <div>{t("Cart is empty")}</div>
+        <div>{t("Go back to")} <Link to="/">{t("homepage")}</Link></div> 
       </>}
 
 

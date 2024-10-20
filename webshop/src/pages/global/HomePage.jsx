@@ -1,17 +1,21 @@
 
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
-// import productsFromFile from "../../data/products.json";
-import cartJSON from "../../data/cart.json";
+import productsFromFile from "../../data/products.json";
+// import cartJSON from "../../data/cart.json";
 import Button from 'react-bootstrap/Button';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import { ToastContainer, toast } from 'react-toastify';
-
+import { ToastContainer, toast } from 'react-toastify'
+import { useTranslation } from 'react-i18next';
 
 function HomePage() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(productsFromFile.slice())
+
+  const { t, i18n } = useTranslation();
+
+
 
 
   const url = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/products.json";
@@ -28,8 +32,12 @@ function HomePage() {
   // }
 
   const addToCart = (addedProduct) => {
-    cartJSON.push(addedProduct);
+    // cartJSON.push(addedProduct);
+   const cartLS = JSON.parse(localStorage.getItem("cart")) || [];
+    cartLS.push(addedProduct);
+    localStorage.setItem("cart", JSON.stringify(cartLS));
     toast.success("Item added to cart");
+
   };
 
   const sortAZ = () => {
@@ -88,18 +96,18 @@ function HomePage() {
      
      
       <ButtonGroup>
-      <Button onClick={sortAZ}>Sort A-Z</Button>
-      <Button onClick={sortZA}>Sort Z-A</Button>
-      <Button onClick={sortAscendingPrice}>Price ascending</Button>
-      <Button onClick={sortDecendingPrice}>Price decending</Button>
-      <Button onClick={sortRatingAscending}>Rating ascending</Button>
-      <Button onClick={sortRatingDescending}>Rating descending</Button>
+      <Button onClick={sortAZ}>{t("Sort A-Z")}</Button>
+      <Button onClick={sortZA}>{t("Sort Z-A")}</Button>
+      <Button onClick={sortAscendingPrice}>{t("Price ascending")}</Button>
+      <Button onClick={sortDecendingPrice}>{t("Price descending")}</Button>
+      <Button onClick={sortRatingAscending}>{t("Rating ascending")}</Button>
+      <Button onClick={sortRatingDescending}>{t("Rating descending")}</Button>
      
-      <DropdownButton as={ButtonGroup} title="Select Category" id="category-dropdown">
-        <Dropdown.Item onClick={filterMensClothing} >Men's clothing</Dropdown.Item>
-        <Dropdown.Item onClick={filterWomensClothing}>Women's clothing</Dropdown.Item>
-        <Dropdown.Item onClick={filterJewelery} >Jewelery</Dropdown.Item>
-        <Dropdown.Item onClick={filterElectronics} >Electronics</Dropdown.Item>
+      <DropdownButton as={ButtonGroup} title={t("Select Category")} id="category-dropdown">
+        <Dropdown.Item onClick={filterMensClothing} >{t("Men's clothing")}</Dropdown.Item>
+        <Dropdown.Item onClick={filterWomensClothing}>{t("Women's clothing")}</Dropdown.Item>
+        <Dropdown.Item onClick={filterJewelery} >{t("Jewelery")}</Dropdown.Item>
+        <Dropdown.Item onClick={filterElectronics} >{t("Electronics")}</Dropdown.Item>
       </DropdownButton>
       </ButtonGroup>
     
@@ -112,11 +120,11 @@ function HomePage() {
           <img style={{width:"100px"}} src={product.image} alt="" />
           <div>{product.title}</div>
           <div>{product.price}€</div>
-          { < button onClick={() => addToCart(product)}>Add to cart</button> }
+          { < button onClick={() => addToCart(product)}>{t("Add to cart")}</button> }
 
           { 
             <Link to={"/product/" + product.title.replaceAll("/", "").replaceAll(" ", "-").replaceAll("/", "").replaceAll(" ", "-").toLowerCase()}>
-               <button>Inspect</button>
+               <button>{t("Inspect")}</button>
             </Link>
           }
           </div>

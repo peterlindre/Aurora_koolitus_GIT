@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react'
 // import productJSON from "../../data/products.json"
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'material-react-toastify';
+import { useTranslation } from 'react-i18next';
 
 function MaintainProducts() {
 const [products, setProducts] = useState ([]);
@@ -16,6 +17,7 @@ useEffect(() => {
   
   },[]);
 
+  const { t } = useTranslation();
 
 const remove = (index) => {
   products.splice(index,1);
@@ -34,10 +36,10 @@ setProducts(value);
       <table>
         <thead>
         <tr> 
-          <th>Picture</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Rating</th> 
+          <th>{t("Picture")}</th>
+          <th>{t("Name")}</th>
+          <th>{t("Price")}</th>
+          <th>{("Rating")}</th> 
         </tr>
         </thead>
         <tbody>
@@ -50,7 +52,7 @@ setProducts(value);
             {/* <td>{product.rate}</td> */}
             <button onClick={() => remove(index)}>X</button>
             <Link to={"/admin/edit-product/"+ index}>  
-              <button>Change</button>
+              <button>{t("Change")}</button>
             </Link>
           
           </tr>
