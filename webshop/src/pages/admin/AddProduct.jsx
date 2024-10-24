@@ -21,7 +21,17 @@ const { t } = useTranslation();
   const imageRef = useRef ();
   const ratingRef = useRef ();
   const url = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+  const categoryDburl = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/categories.json";
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState ([]);
+
+
+  useEffect(() => {
+    fetch(categoryDburl)
+      .then(res => res.json())
+      .then(json => setCategories(json || []))
+    
+    },[]);
 
   useEffect(() => {
     fetch(url)
@@ -79,7 +89,11 @@ const { t } = useTranslation();
       <label>{t("Rating")}:</label> <br />
       <input ref={ratingRef}  type="text" /> <br />
       <label>{t("Category")}:</label> <br />
-      <input ref={categoryRef}  type="text" /> <br />
+      {/* <input ref={categoryRef}  type="text" /> */}
+     <select ref={categoryRef}>
+     {categories.map(category => <option> {category.name}</option>)}
+      </select>
+       <br />
       <button onClick={add}>{t("Add")}</button>
       
 

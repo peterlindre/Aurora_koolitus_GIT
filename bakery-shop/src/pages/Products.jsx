@@ -2,6 +2,9 @@ import { useRef, useState } from "react";
 import { Button, Table } from "react-bootstrap";
 
 function Products() {
+
+
+  
   const nameRef = useRef();
   const priceRef = useRef();
   const quantityRef = useRef();
@@ -18,6 +21,11 @@ function Products() {
     { name: 'Croissant', price: 1.8, quantity: 1, store: 'Lasnamäe store' },
     { name: 'Chocolate chip cookie', price: 3.25, quantity: 3, store: 'Mustamäe store' }
   ]);
+
+  const sortAscendingPrice = () => {
+
+  }
+
 
   const addProduct = () => {
     const newProduct = {

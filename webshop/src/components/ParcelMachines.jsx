@@ -15,7 +15,9 @@ useEffect(() => {
   return (
     <div>
       <select>
-      {ParcelMachines.map(pm =><option>{pm.NAME}</option>)}
+      {ParcelMachines
+      .filter(pm => pm.A0_NAME === "EE")
+      .map(pm => <option>{pm.NAME}</option>)}
       </select>
 
     </div>

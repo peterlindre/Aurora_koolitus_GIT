@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'material-react-toastify';
 import { useTranslation } from 'react-i18next';
 
@@ -12,7 +11,7 @@ function MaintainShops() {
   
 
 
-  const url = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/products.json";
+  const url = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/shops.json";
   
   
   useEffect(() => {
@@ -24,7 +23,11 @@ function MaintainShops() {
   
     const { t } = useTranslation();
 
-  
+  const addShop = () => {
+    shops.push({"name": searchRef.current.value});
+    fetch (url, {method: "PUT", body: JSON.stringify(shops)});
+  }
+
   
   const remove = (index) => {
     shops.splice(index,1);
@@ -37,9 +40,38 @@ function MaintainShops() {
   setShops(value);
   }
 
+
+// shops.push ({
+// "name": nameRef.current.value, 
+// "longitude" : longitudeRef.current.value,
+// "latitude" : latitudeRef.current.value,
+// "openTime" : openTimeRef.current.value,
+// "googleMapsAadress" : mapsRef.current.value
+//})
+
   return (
     <div>
       
+
+
+<div>
+      <label> Name </label>
+      <input type="text" />
+
+      <label> Opening times </label>
+      <input type="text" />
+
+      <label> Latitude </label>
+      <input type="text" />
+
+      <label> Longitude </label>
+      <input type="text" />
+
+      <label> Google Maps URL </label>
+      <input type="text" />
+      </div>
+
+
 
       <input ref={searchRef} onChange={search} type="text" />
       <table>
@@ -60,7 +92,7 @@ function MaintainShops() {
             <td>{product.rating.rate}</td>
           
             <button onClick={() => remove(index)}>X</button>
-           
+           <button onClick={addShop}>Add new shop</button>
           
           </tr>
           )}

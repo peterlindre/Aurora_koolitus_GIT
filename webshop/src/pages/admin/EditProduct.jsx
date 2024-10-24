@@ -17,8 +17,15 @@ const found = products[index];
   const activeRef = useRef();
   const countRef = useRef(); 
   const url = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/products.json";
-  
+  const categoryDburl = "https://veebipood-inglise-keelne-default-rtdb.europe-west1.firebasedatabase.app/categories.json";
+  const [categories, setCategories] = useState([]);
 
+  useEffect(() => {
+  fetch(categoryDburl)
+    .then(res => res.json())
+    .then(json => setCategories(json || []))
+  
+  },[]);
 
   useEffect(() => {
     fetch(url)
@@ -55,8 +62,6 @@ const found = products[index];
       <input  ref={titleRef} defaultValue={found.title} type="text" /> <br />
       <label>ID:</label> <br />
       <input ref={idRef} defaultValue={found.id} type="text" /> <br />
-      <label>Active:</label> <br />
-      <input ref={activeRef} defaultValue={found.active}  type="checkbox" /> <br />
       <label>Image:</label> <br />
       <input ref={imageRef}  defaultValue={found.image} type="text" /> <br />
       <label>Description:</label> <br />
@@ -64,11 +69,16 @@ const found = products[index];
       <label>Price:</label> <br />
       <input ref={priceRef} defaultValue={found.price}  type="number" /> <br />
       <label>Rating:</label> <br />
-      <input ref={ratingRef}  defaultValue={found.rating} type="number" /> <br />
+      <input ref={ratingRef}  defaultValue={found.rating.rate} type="number" /> <br />
       <label>Count:</label> <br />
-      <input ref={countRef} defaultValue={found.count}  type="number" /> <br />
+      <input ref={countRef} defaultValue={found.rating.count}  type="number" /> <br />
       <label>Category:</label> <br />
-      <input ref={categoryRef} defaultValue={found.category} type="text" /> <br />
+      {/* <input ref={categoryRef} defaultValue={found.category} type="text" /> <br /> */}
+      <select ref={categoryRef} defaultValue={found.category}>
+     {categories.map(category => <option> {category.name}</option>)}
+      </select> <br />
+      <label>Active:</label> <br />
+      <input ref={activeRef} defaultValue={found.active}  type="checkbox" /> <br />
         <button onClick={add}>Add</button> 
 
 

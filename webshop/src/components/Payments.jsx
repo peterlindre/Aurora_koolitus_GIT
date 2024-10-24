@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React from 'react'
 
 function payments() {
@@ -27,8 +28,8 @@ const pay = () => {
 
   return (
     <div>
-      
-      <button onClick={pay}>Pay</button>
+     
+      <Button variant="outlined" onClick={pay}>Pay</Button>
     </div>
   )
 }

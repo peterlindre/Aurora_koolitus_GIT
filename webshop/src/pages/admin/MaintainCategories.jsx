@@ -17,6 +17,7 @@ const addCategory = () => {
   categories.push({"name":categoryRef.current.value});
 setCategories(categories.slice());
 fetch(url,{method: "PUT", body: JSON.stringify(categories)});
+categoryRef.current.value = "";
 }
 
 const kustuta = (index) => {
