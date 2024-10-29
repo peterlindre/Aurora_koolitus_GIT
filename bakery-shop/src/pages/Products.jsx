@@ -2,9 +2,6 @@ import { useRef, useState } from "react";
 import { Button, Table } from "react-bootstrap";
 
 function Products() {
-
-
-  
   const nameRef = useRef();
   const priceRef = useRef();
   const quantityRef = useRef();
@@ -23,11 +20,17 @@ function Products() {
   ]);
 
   const sortAscendingPrice = () => {
-
-  }
-
+    products.sort((a, b) => a.price - b.price);
+    setProducts(products.slice());
+    }
+    const sortDecendingPrice = () => {
+      products.sort((a, b) => b.price - a.price);
+      setProducts(products.slice());
+      }
 
   const addProduct = () => {
+
+
     const newProduct = {
       name: nameRef.current.value,
       price: priceRef.current.value,
@@ -36,11 +39,17 @@ function Products() {
     }
     products.push(newProduct);
     setProducts(products.slice());
+    
   }
+
+  
 
   return (<div>
     <div className="container">
       <h2 className="mb-4">Products</h2>
+      
+      <Button className="price" variant="success" type="submit" onClick={sortAscendingPrice} >Price lowest first</Button>
+      <Button variant="success" type="submit" onClick={sortDecendingPrice} >Price highest first</Button>
       <Table className="table table-hover table-bordered">
         <thead>
         <tr>
@@ -51,8 +60,10 @@ function Products() {
         </tr>
         </thead>
         <tbody>
+       
         {/* TODO: Order the products by price */}
         {products.map(product => 
+      
             <tr key={product.name + product.price}>
               <td>{product.name}</td>
               <td>{product.price}</td>

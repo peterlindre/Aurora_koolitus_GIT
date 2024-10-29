@@ -6,7 +6,7 @@ function Electricity() {
 const [prices, setPrice] = useState([]);
 
 useEffect(() => {
-  
+   
   fetch("https://dashboard.elering.ee/api/nps/price")
   .then(res => res.json()) // metaandmed (staatuskood, headers, ....)
   .then(json => setPrice(json.data.ee)) // reaalselt mida ma naen brauseris

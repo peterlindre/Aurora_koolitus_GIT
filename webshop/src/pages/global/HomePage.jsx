@@ -66,6 +66,7 @@ function HomePage() {
     products.sort((a,b) => a.title.localeCompare(b.title))
     setProducts(products.slice());
   }
+  
   const sortZA = () => {
     products.sort((a,b) => b.title.localeCompare(a.title))
     setProducts(products.slice());

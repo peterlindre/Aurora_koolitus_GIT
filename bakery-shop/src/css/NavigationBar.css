@@ -1,7 +1,7 @@
 nav {
   font-family: 'Times new roman', serif;
   background-color: #2f9c37;
-}
+} 
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -35,4 +35,10 @@ nav .navbar-brand {
   vertical-align: middle;
   margin-left: 1rem;
 }
+
+.price {
   
+margin-right: 2px;
+
+}
+
