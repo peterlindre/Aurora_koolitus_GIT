@@ -1,0 +1,32 @@
+.cart__product {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20%;
+  border-bottom: solid lightgray;
+  padding: 10px;
+  }
+  
+  .cart__image {
+  width: 50px;
+  height: 50px;
+  }
+  
+  .cart__title {
+  width: 200px;
+  }
+  
+  .cart__price {
+  width: 80px;
+  }
+  .cart__button{
+    width: 20px;
+    height: 20px;
+  }
+  
+  .cart__button:hover {
+  cursor: pointer;
+  opacity: 70%;
+  }
+  .cart__button:active {
+    padding: 1px;
+  }

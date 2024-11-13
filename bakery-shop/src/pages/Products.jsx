@@ -53,7 +53,7 @@ function Products() {
       <Table className="table table-hover table-bordered">
         <thead>
         <tr>
-          <th scope="col">Product</th>
+          <th scope="col">Product</th> 
           <th scope="col">Price (€)</th>
           <th scope="col">Quantity (pcs)</th>
           <th scope="col">Store</th>
@@ -65,7 +65,7 @@ function Products() {
         {products.map(product => 
       
             <tr key={product.name + product.price}>
-              <td>{product.name}</td>
+           <b> <td>{product.name}</td> </b>  
               <td>{product.price}</td>
               {/*  TODO: Display the quantity in red if it is lower than 3 */}
               <td>{product.quantity}</td> 

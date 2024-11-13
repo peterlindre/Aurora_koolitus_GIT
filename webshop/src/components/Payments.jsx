@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react'
 
-function payments() {
+function payments(props) {
 
 const pay = () => {
   const paymentURL = "https://igw-demo.every-pay.com/api/v4/payments/oneoff";
@@ -9,7 +9,7 @@ const pay = () => {
   "account_name": "EUR3D1",
   "nonce": "16573d2" + new Date() + Math.random() * 99999,
   "timestamp": new Date(),
-  "amount": Math.random() * 99 ,
+  "amount": props.sum ,
   "order_reference": Math.random() * 99999,
   "customer_url": "https://veebipood-inglise-keelne.web.app",
   "api_username": "92ddcfab96e34a5f"
@@ -18,6 +18,7 @@ const pay = () => {
     "Authorization": "Basic OTJkZGNmYWI5NmUzNGE1Zjo4Y2QxOWU5OWU5YzJjMjA4ZWU1NjNhYmY3ZDBlNGRhZA==",
     "Content-Type": "application/json" 
   };
+
 
   fetch(paymentURL, {method: "POST", body: JSON.stringify(paymentBody), headers: paymentHeaders})
   .then(res => res.json())

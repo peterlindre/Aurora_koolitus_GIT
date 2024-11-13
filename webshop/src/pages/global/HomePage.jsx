@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {Link} from 'react-router-dom'
 import productsFromFile from "../../data/products.json";
 // import cartJSON from "../../data/cart.json";
@@ -10,10 +10,14 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { ToastContainer, toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next';
+import SortButtons from '../../components/SortButtons';
+import { CartSumContext } from '../../store/CartSumContext';
+import styles from "../../css/HomePage.module.css"
 
 function HomePage() {
   const [products, setProducts] = useState([]);
   const [dbProducts, setDbProducts] = useState ([]);
+  const {setCartSum} = useContext(CartSumContext);
 
   const { t } = useTranslation();
 
@@ -59,61 +63,18 @@ function HomePage() {
    
     localStorage.setItem("cart", JSON.stringify(cartLS));
     toast.success("Item added to cart");
+    let sum = 0
+    cartLS.forEach(product => sum = sum + product.toode.price * product.kogus);
+    setCartSum(sum);
+
 
   };
 
-  const sortAZ = () => {
-    products.sort((a,b) => a.title.localeCompare(b.title))
-    setProducts(products.slice());
-  }
   
-  const sortZA = () => {
-    products.sort((a,b) => b.title.localeCompare(a.title))
-    setProducts(products.slice());
-  }
-  const sortAscendingPrice = () => {
-    products.sort((a, b) => a.price - b.price);
-    setProducts(products.slice());
-    }
-    const sortDecendingPrice = () => {
-      products.sort((a, b) => b.price - a.price);
-      setProducts(products.slice());
-      }
-
-      // const filterElectronics = () => {
-      //   const filteredProducts = products.filter(product => product.category === "electronics");
-      // setProducts(filteredProducts);
-      // }
-      // const filterJewelery = () => {
-      //   const filteredProducts = products.filter(product => product.category === "jewelery");
-      // setProducts(filteredProducts);
-      // }
-      // const filterMensClothing = () => {
-      //   const filteredProducts = products.filter(product => product.category === "men's clothing" );
-      // setProducts(filteredProducts);
-      // }
-      // const filterWomensClothing = () => {
-      //   const filteredProducts = products.filter(product => product.category === "women's clothing");
-      // setProducts(filteredProducts);
-      // }
-
-         const filter = (categoryClicked) => {
-         const filteredProducts = dbProducts.filter(product => product.category === categoryClicked);
-       setProducts(filteredProducts);
-      }
-
-
-           // Sorting by Rating Ascending
-    const sortRatingAscending = () => {
-      products.sort((a, b) => a.rating.rate - b.rating.rate);
-      setProducts(products.slice());
-    }
-  
-    // Sorting by Rating Descending
-      const sortRatingDescending = () => {
-      products.sort((a, b) => b.rating.rate - a.rating.rate);
-      setProducts(products.slice());
-    }
+    const filter = (categoryClicked) => {
+      const filteredProducts = dbProducts.filter(product => product.category === categoryClicked);
+    setProducts(filteredProducts);
+   }
 
     // if (product.length === 0) {
     //   return 
@@ -126,12 +87,7 @@ function HomePage() {
      
      
       <ButtonGroup>
-      <Button onClick={sortAZ}>{t("Sort A-Z")}</Button>
-      <Button onClick={sortZA}>{t("Sort Z-A")}</Button>
-      <Button onClick={sortAscendingPrice}>{t("Price ascending")}</Button>
-      <Button onClick={sortDecendingPrice}>{t("Price descending")}</Button>
-      <Button onClick={sortRatingAscending}>{t("Rating ascending")}</Button>
-      <Button onClick={sortRatingDescending}>{t("Rating descending")}</Button>
+      <SortButtons products={products} setProducts={setProducts} />
      
       <DropdownButton as={ButtonGroup} title={t("Select Category")} id="category-dropdown">
         {/* <Dropdown.Item onClick={filterMensClothing} >{t("Men's clothing")}</Dropdown.Item>
@@ -145,11 +101,11 @@ function HomePage() {
       </ButtonGroup>
     
      
-<div className= "products">
+<div className={styles.products}>
       {products.map(product =>
-        <div className= "product" key={product.id}>
-          <img className="image" src={product.image} alt="" />
-          <div className="title">{product.title}</div>
+        <div className= {styles.product} key={product.id}>
+          <img className={styles.image} src={product.image} alt="" />
+          <div className={styles.title}>{product.title}</div>
           <div>{product.price}€</div>
           { < MuiButton variant='contained' onClick={() => addToCart(product)}>{t("Add to cart")}</MuiButton> }
 
@@ -162,7 +118,7 @@ function HomePage() {
       )}
      </div>
         <ToastContainer
-           position="top-right"
+           position="bottom-right"
            autoClose={2000}
            theme="dark" /> 
     </div>

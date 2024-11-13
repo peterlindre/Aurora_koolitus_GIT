@@ -2,7 +2,7 @@ import React from 'react';
 import L from 'leaflet';
  import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 //  import icon from 'leaflet/dist/images/marker-icon.png';
-import icon from './map-marker.png';
+import icon from './car.marker.png';
 //  import iconShad ow from 'leaflet/dist/images/marker-shadow.png';
  import ChangeView from './ChangeView';
  let DefaultIcon = L.icon({
@@ -25,27 +25,16 @@ import icon from './map-marker.png';
          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
        />
-       <Marker position={[59.4231, 24.7991]}>
-         <Popup>
-           Ülemiste keskus. <br /> Avatud 9-20
-           <a 
-           target ='_blank'
-           rel= "noreferrer" //turvarisk tuleb juurde lisada, et tootaks
-           href="https://www.google.com/maps/place/Ülemiste+keskus/@59.4219391,24.7912974,17z/data=!3m1!4b1!4m6!3m5!1s0x4692eb54f4edfe43:0x206e6dcbdf41435e!8m2!3d59.4219391!4d24.793867!16s%2Fm%2F0hrdb05?entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D">
-           Suur-Sõjamäe tn 4, 11415 Tallinn
-           </a>
-         </Popup>
-       </Marker>
       
       
-       <Marker position={[58.3875, 24.5040]}>
+       <Marker position={[59.3934, 24.7186]}>
          <Popup>
-           Port Artur 2 keskus. <br /> Avatud 11-21 <br />
+         Pärnu mnt. 238 <br /> Avatud E-R 9:00-18:00 <br />
            <a 
            target ='_blank'
            rel= "noreferrer"
-           href="https://www.google.com/maps/place/Port+Artur+2/@58.38744,24.5014354,17z/data=!3m1!4b1!4m6!3m5!1s0x46ecfd23c5a5f967:0x4ddf3f80f0c6e99c!8m2!3d58.38744!4d24.504005!16s%2Fg%2F119w8msqc?entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D">
-           Lai 11, 80010, Pärnu
+           href="https://www.google.com/maps/place/Järve+Keskus/@59.3934346,24.7186861,450m/data=!3m2!1e3!4b1!4m6!3m5!1s0x469294df1251b9e9:0x95fcb21812d70be4!8m2!3d59.3934319!4d24.721261!16s%2Fm%2F0w7qf86?entry=ttu&g_ep=EgoyMDI0MTExMC4wIKXMDSoASAFQAw%3D%3D">
+           Pärnu mnt. 238, 11624 Tallinn
            </a>
          </Popup>
        </Marker>
