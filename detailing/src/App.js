@@ -7,6 +7,7 @@ import Homepage from './pages/Homepage';
 import Works from './pages/Works';
 import Map from './components/Maps';
 import Services from './pages/Services';
+import Pricelist from './pages/Pricelist';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       <Route path='works' element={ <Works />} />
       <Route path='maps' element={ <Map />} />
       <Route path='services' element={ <Services />} />
+      <Route path='prices' element={ <Pricelist />} />
+  
 
 
      </Routes>

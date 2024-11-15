@@ -17,7 +17,7 @@ import icon from './car.marker.png';
  function Map(props) { 
  
    return (
-   <div>
+   <div className='maps-text'>
  
      <MapContainer className='map' center={props.mapCoordinaates.lngLat} zoom={props.mapCoordinaates.zoom} scrollWheelZoom={false}>
        <ChangeView center={props.mapCoordinaates.lngLat} zoom={props.mapCoordinaates.zoom} />
