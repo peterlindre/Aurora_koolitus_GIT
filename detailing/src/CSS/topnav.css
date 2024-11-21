@@ -1,0 +1,27 @@
+.languagebtn .btn {
+  background-color: black; 
+  color: white; 
+  border: none;
+  padding: 8px 16px; 
+}
+
+.languagebtn .btn:hover {
+  background-color: #736f6f; 
+}
+
+.languagebtn .btn:focus {
+  outline: none; 
+}
+
+.languagebtn .btn:active {
+  transform: scale(0.9);
+}
+.headers {
+  color: rgb(0, 0, 0);
+}
+.headers:hover {
+  color: gray;
+  cursor: pointer;
+  text-decoration: underline;
+}
+

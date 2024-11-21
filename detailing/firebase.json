@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site" : "detailing-shop-c61a8",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

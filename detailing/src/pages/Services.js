@@ -4,6 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import i18n from '../components/i18n';
 import { Link } from 'react-router-dom';
+import services from '../CSS/services.css'
 
 function Services() {
 

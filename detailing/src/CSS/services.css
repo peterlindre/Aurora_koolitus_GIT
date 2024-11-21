@@ -1,0 +1,63 @@
+.card-img-top {
+  height: 200px;
+  transform: scale(1);
+  transition: transform 0.7s ease;
+
+}
+
+ .card-title {
+  margin-top: 3%;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 10%;
+  
+ }
+ .card-text {
+  margin-top: 4%;
+  text-align: left;
+  margin-left: 10%;
+  font-weight: bold;
+
+ }
+
+ .card:hover{
+  transform: scale(1.1); 
+  transition: all 0.4s ease;
+  
+}
+.card:active{ 
+  transform: scale(0.1);
+  transition: all 0.4s ease;
+}
+.card{
+  overflow: hidden;
+  border-radius: 12px;
+  
+  height: 500px;
+  width: 450px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  
+}
+.col1 {
+
+  margin-left: 10%;
+  
+}
+.services {
+
+  font-size: 20px;
+}
+
+
+.header-text {
+  text-align: center;
+  margin-top: 20px;
+}
+.header:hover {
+  cursor: pointer;
+  opacity: 1.9;
+  
+  }

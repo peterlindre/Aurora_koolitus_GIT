@@ -4,10 +4,10 @@ import './App.css';
 import TopNav from './components/TopNav';
 import Contact from './pages/Contact';
 import Homepage from './pages/Homepage';
-import Works from './pages/Works';
 import Map from './components/Maps';
 import Services from './pages/Services';
 import Pricelist from './pages/Pricelist';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -17,13 +17,10 @@ function App() {
      <Routes>
       <Route path='homepage' element={ <Homepage />} />
       <Route path='contact' element={ <Contact />} />
-      <Route path='works' element={ <Works />} />
       <Route path='maps' element={ <Map />} />
       <Route path='services' element={ <Services />} />
       <Route path='prices' element={ <Pricelist />} />
-  
-
-
+      <Route path='*' element={ <NotFound />} />
      </Routes>
   
     </div>

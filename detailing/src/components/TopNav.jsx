@@ -1,11 +1,11 @@
 import React from 'react'
-import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import HomeIcon from '@mui/icons-material/Home';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { useTranslation } from 'react-i18next';
 import i18n from './i18n';
-
+import topnav from '../CSS/topnav.css'
 
 function TopNav() {
 
@@ -13,7 +13,6 @@ function TopNav() {
   const changeLangEn = () => {
     i18n.changeLanguage("en")
     localStorage.setItem("language","en");
-    // alati kui .setItem, peab kuskil olema ka .getItem
   }
 
   const changeLangEe = () => {
@@ -33,7 +32,7 @@ function TopNav() {
           <Nav.Link className='headers' as={Link} to="/services">{t("Teenused")}</Nav.Link>
           <Nav.Link className='headers' as={Link} to="/prices" >{t("Hinnakiri")}</Nav.Link>
           <Nav.Link className='headers' as={Link} to="/contact">{t("Kontakt")}</Nav.Link>
-          <Nav.Link className='headers' as={Link} to="https://www.instagram.com/raythdetailing/"><InstagramIcon className='instagram'></InstagramIcon></Nav.Link>
+          <Nav.Link className='headers' as="a" href="https://www.instagram.com/raythdetailing/" target="_blank" rel="noopener noreferrer"><InstagramIcon className='instagram'></InstagramIcon></Nav.Link>
         </Nav>
 
         <Nav className="ms-auto">
